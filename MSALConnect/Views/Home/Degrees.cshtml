@@ -1,0 +1,19 @@
+﻿@using System.Diagnostics.PerformanceData
+@using MSALConnect.App_GlobalResources
+@using MSALConnect.Models
+@using Resources
+
+
+<h2>Degrees</h2>
+
+@{
+
+    ViewBag.Title = "Degrees";
+    <ul style="margin-top:2%">
+        @foreach (var degree in ViewBag.Degrees)
+        {
+            <li><a href="@Html.Action("Courses", "Home", new { id = @degree.degreeID })" >@degree.name</a></li>
+           
+        }
+    </ul>
+}
