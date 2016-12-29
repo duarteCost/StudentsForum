@@ -16,11 +16,7 @@ namespace MSALConnect
             );
 
 
-            routes.MapRoute(
-                name: "get_Degree",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Courses", id = UrlParameter.Optional }
-            );
+            
         }
     }
 }

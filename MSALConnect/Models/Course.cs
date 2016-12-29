@@ -17,5 +17,6 @@ namespace MSALConnect.Models
         public int year { get; set; }
         
         public virtual ICollection<Doubt> doubts { get; set; }
+        public virtual ICollection<Work> works { get; set; }
     }
 }

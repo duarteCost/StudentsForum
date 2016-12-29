@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Página da disciplina";
+}
+
+<h2>Página da disciplina</h2>
+<br>
+<br>
+<li>  @Html.ActionLink("Dúvidas da disciplina", "Course_doubt", new { id = ViewBag.id_course })</li>
+<li>  @Html.ActionLink("Projetos da Disciplina", "Course_projects", new { id = ViewBag.id_course })</li>
+

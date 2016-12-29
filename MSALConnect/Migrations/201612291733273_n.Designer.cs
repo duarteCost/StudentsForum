@@ -7,13 +7,13 @@ namespace MSALConnect.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class D : IMigrationMetadata
+    public sealed partial class n : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(D));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(n));
         
         string IMigrationMetadata.Id
         {
-            get { return "201612291253482_D"; }
+            get { return "201612291733273_n"; }
         }
         
         string IMigrationMetadata.Source

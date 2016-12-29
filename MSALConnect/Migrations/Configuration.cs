@@ -25,19 +25,103 @@ namespace MSALConnect.Migrations
                       name = "Engenharia Informática",
                       courses = new List<Course>()
                       {
-                          new Course()
-                          {
-                              name = "Engenharia Organizacional"
-                          }
+                            new Course()
+                            {
+                                name = "Engenharia Organizacional",
+                                semester = 1,
+                                year = 4
+                                
+                            },
+                            new Course()
+                            {
+                                name = "Desenho e implementação de software",
+                                semester = 1,
+                                year = 4
+                            },
+                            new Course()
+                            {
+                                name = "Gestão de sistemas e Redes",
+                                semester = 1,
+                                year = 4
+                            },
+                            new Course()
+                            {
+                                name = "Aplicações Centradas em redes",
+                                semester = 1,
+                                year = 4
+                            },
+
                       }
                   },
                   new Degree
                   {
-                      name = "Engenharia Eletrónica"
+                    name = "Engenharia Eletrónica",
+                    courses = new List<Course>()
+                    {
+                        new Course()
+                        {
+                            name = "Comunicações digitais",
+                            semester = 1,
+                            year = 4
+
+                        },
+                         new Course()
+                        {
+                            name = "Eletrónica da potência",
+                            semester = 1,
+                            year = 4
+
+                        },
+                        new Course()
+                        {
+                            name = "Comunicações móveis e sem fios",
+                            semester = 1,
+                            year = 4
+
+                        },
+                        new Course()
+                        {
+                            name = "Comunicações ópticas",
+                            semester = 1,
+                            year = 4
+
+                        }
+                    }
                   },
                   new Degree
                   {
-                      name = "Engenharia Civil"
+                      name = "Engenharia Civil",
+                      courses = new List<Course>()
+                    {
+                        new Course()
+                        {
+                            name = "Estruturas de Betão Armado e Pré-esforçado",
+                            semester = 1,
+                            year = 4
+
+                        },
+                        new Course()
+                        {
+                            name = "Fundações e Estruturas de Suporte",
+                            semester = 1,
+                            year = 4
+
+                        },
+                        new Course()
+                        {
+                            name = "Tecnologia da Construção",
+                            semester = 1,
+                            year = 4
+
+                        },
+                        new Course()
+                        {
+                            name = "Hidráulica Urbana",
+                            semester = 1,
+                            year = 4
+
+                        },
+                    }
                   }
                 );
             

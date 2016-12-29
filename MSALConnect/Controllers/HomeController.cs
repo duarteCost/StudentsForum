@@ -34,7 +34,7 @@ namespace MSALConnect.Controllers
         public ActionResult Degrees()
         {
             DB_DIS db = new DB_DIS();
-            
+
 
             ViewBag.Degrees = db.Degrees;
             return View();
@@ -43,18 +43,18 @@ namespace MSALConnect.Controllers
 
         public ActionResult Courses(int id)
         {
-            //DB_DIS db = new DB_DIS();
+            DB_DIS db = new DB_DIS();
 
-            //var degree = db.Degrees.Find(id);
-            //if (degree != null)
-            //{
-            //    ViewBag.Courses = degree.courses;
-            //}
+            var degree = db.Degrees.Find(id);
+            if (degree != null)
+            {
+                ViewBag.Courses = degree.courses;
+            }
 
             return View();
         }
 
-        //------------------------------------------------------------------------------//
+        ////------------------------------------------------------------------------------//
 
         [Authorize]
         // Get the current user's email address from their profile.

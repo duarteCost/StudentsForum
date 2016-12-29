@@ -15,7 +15,7 @@
     @Styles.Render("https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap-theme.min.css")
     @Scripts.Render("https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.6.2.js")
 </head>
-<body>
+<body style ="margin-top: 5%">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -29,7 +29,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink( Resource.Home, "Index", "Home" )</li>
-                    <li>@Html.ActionLink("Degrees", "Degrees", "Home")</li>
+                    <li>@Html.ActionLink("Degrees", "GetDegrees", "Degree")</li>
                     <li>@Html.ActionLink( Resource.About, "About", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
