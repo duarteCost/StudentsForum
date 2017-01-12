@@ -11,6 +11,8 @@ namespace MSALConnect.Models
         public string name { get; set; }
         public string email { get; set; }
 
+
+        
         public virtual ICollection<Work> works { get; set; }
         public virtual ICollection<Answer> answers { get; set; }
         public virtual ICollection<Doubt> doubts { get; set; }

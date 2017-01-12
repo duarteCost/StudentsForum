@@ -36,15 +36,8 @@ namespace MSALConnect.Controllers
             return View();
         }
 
-        public ActionResult Course_doubt(int id)
-        {
-            return View();
-        }
+        
 
-        public ActionResult Course_Projects(int id)
-        {
-            return View();
-        }
 
 
     }

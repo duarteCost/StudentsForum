@@ -6,6 +6,6 @@
 <h2>Página da disciplina</h2>
 <br>
 <br>
-<li>  @Html.ActionLink("Dúvidas da disciplina", "Course_doubt", new { id = ViewBag.id_course })</li>
-<li>  @Html.ActionLink("Projetos da Disciplina", "Course_projects", new { id = ViewBag.id_course })</li>
+<li>  @Html.ActionLink("Dúvidas da disciplina", "Course_doubt", "Doubt", new { id = ViewBag.id_course }, null)</li>
+<li>  @Html.ActionLink("Projetos da Disciplina", "Course_Projects", "Projects", new { id = ViewBag.id_course }, null)</li>
 
