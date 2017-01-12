@@ -181,6 +181,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DegreeController.cs" />
+    <Compile Include="Controllers\DoubtsController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -256,8 +258,8 @@
     <Content Include="Views\Courses\Course_Page.cshtml" />
     <Content Include="Views\Degree\GetDegrees.cshtml" />
     <Content Include="Views\Courses\GetCourses.cshtml" />
-    <Content Include="Views\Courses\Course_doubt.cshtml" />
-    <Content Include="Views\Courses\Course_Projects.cshtml" />
+    <Content Include="Views\Doubts\Course_doubt.cshtml" />
+    <Content Include="Views\Projects\Course_Projects.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
