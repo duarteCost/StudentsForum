@@ -1,0 +1,13 @@
+﻿body {
+}
+.container {
+    padding-right: 0%;
+    padding-left: 0%;
+    margin-right: 0%;
+    margin-left: 0%;
+}
+
+.navbar {
+    border-radius: 0px;
+    margin: 0% 0% 0% 0%;
+}

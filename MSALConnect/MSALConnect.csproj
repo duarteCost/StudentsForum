@@ -235,6 +235,7 @@
     <None Include="Scripts\_references.js" />
     <Content Include="Global.asax" />
     <Content Include="Styles\getCourses.css" />
+    <Content Include="Styles\layout.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

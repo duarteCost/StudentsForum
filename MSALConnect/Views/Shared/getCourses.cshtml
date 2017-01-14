@@ -4,41 +4,61 @@
 @using MSALConnect.Models
 <head>
     <link href="../../Styles/getCourses.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+        function exibe(el) {
+
+            var display = document.getElementById(el).style.display;
+            if (display == "none")
+                document.getElementById(el).style.display = 'block';
+            else
+                document.getElementById(el).style.display = 'none';
+        }
+    </Script>
 </head>
 
 @{
     ViewBag.Title = "getCourses";
 }
+<body>
+    
+    @{
+        int x = 0;
+        ViewBag.Title = "GetCourses";
+        List<Course> courses = new List<Course>() ;
 
-<h2 class =" color">Minhas Disciplinas</h2>
-@{
-    int x = 0;
-    ViewBag.Title = "GetCourses";
-    List<Course> courses = new List<Course>() ;
-
-    string elementsNumber = Session["Count"].ToString();
-    int j = int.Parse(elementsNumber);
+        string elementsNumber = Session["Count"].ToString();
+        int j = int.Parse(elementsNumber);
 
 
-    for (int i = 1; i<=j; i++)
-    {
-        Course course = new Course();
-        course.name = Session["courseName" + i].ToString();
-        var id = Session["courseId" + i].ToString();
-        course.id = int.Parse(id);
-        courses.Add(course);
-    }
-    <ul>
-        @foreach (var course in courses)
+        for (int i = 1; i<=j; i++)
         {
-
-            string courseName = @course.name;
-            <li><a href="#">@courseName</a></li>
-            <div style="">
-                <li> @Html.ActionLink("Dúvidas da disciplina", "Course_Doubts", "Doubt", new {id = @course.id}, null)</li>
-                <li> @Html.ActionLink("Projetos da Disciplina", "Course_Projects", "Projects", new {id = @course.id}, null)</li>
-            </div>
+            Course course = new Course();
+            course.name = Session["courseName" + i].ToString();
+            var id = Session["courseId" + i].ToString();
+            course.id = int.Parse(id);
+            courses.Add(course);
         }
-    </ul>
+        <div class="navbarLeft">
+            <ul class = "getCorsesUl">
+                @foreach (var course in courses)
+                {
 
-}
+                    string courseName = @course.name;
+                    <li>
+                        <a onclick="exibe('@courseName')" href="#">@courseName</a>
+                        <div id="@courseName" style="display: none">
+                            <ul>
+                                <li class ="getCorsesLi"><p class="getCorsesP"> @Html.ActionLink("Dúvidas da disciplina", "Course_Doubts", "Doubt", new { id = @course.id }, null)</p></li>
+                                <li class ="getCorsesLi"><p class="getCorsesP"> @Html.ActionLink("Projetos da Disciplina", "Course_Projects", "Projects", new { id = @course.id }, null)</p></li>
+                            </ul>
+
+
+                        </div>
+                    </li>
+
+                }
+            </ul>
+        </div>
+
+    }
+</body>

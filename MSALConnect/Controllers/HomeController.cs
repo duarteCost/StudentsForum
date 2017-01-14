@@ -28,6 +28,7 @@ namespace MSALConnect.Controllers
 
 
             var student = db.Students.Find(studentNumberInt);
+            Session["studentName"] = student.name;
             if (student != null)
             {
                 var courses = student.degree.courses;

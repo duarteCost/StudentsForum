@@ -10,7 +10,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li class="navbar-text">
                 @*The 'preferred_aUsername' claim can be used for showing the aUser's primary way of identifying themselves.*@
-                Hello, @(System.Security.Claims.ClaimsPrincipal.Current.FindFirst("preferred_aUsername")?.Value)
+                Hello, @Session["studentName"]
               
             </li>
             <li>
