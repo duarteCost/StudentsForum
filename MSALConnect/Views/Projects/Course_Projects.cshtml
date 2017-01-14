@@ -1,6 +1,33 @@
-﻿@{
-    ViewBag.Title = "Projetos da Disciplina";
-}
+﻿<!DOCTYPE html>
+<html>
+    <head>
 
-<h2>Projetos da Disciplina</h2>
+        @{
+            ViewBag.Title = "Projetos da Disciplina";
+            var courseName = @ViewBag.course.name;
+        }
+        <link rel="stylesheet" type="text/css" href="../../App_GlobalResources/Content/ShowProjetos.css">
+    </head>
+    <body>
+        <h2>Projetos da Disciplina</h2>
+        <p>@courseName</p>
+        <!-- UPLOAD DE FICHEIROS -->
+        @using (Html.BeginForm("uploadFile", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="file" />
+            <input type="submit" value="OK" />
+        }
+        <!--  ---------------- -->
+    <ul>
+        @foreach (var projeto in ViewBag.Projetos)
+        {
+            string[] po;
 
+            po = projeto.Split('\\');
+            @Html.ActionLink(po[9],  "ShowProject", "Projects", new {pathName = projeto}, null)
+
+        }
+       
+    </ul>
+    </body>
+</html>

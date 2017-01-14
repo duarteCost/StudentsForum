@@ -179,16 +179,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DegreeController.cs" />
     <Compile Include="Controllers\DoubtController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612291733273_n.cs" />
-    <Compile Include="Migrations\201612291733273_n.Designer.cs">
-      <DependentUpon>201612291733273_n.cs</DependentUpon>
+    <Compile Include="Migrations\201701131254000_h.cs" />
+    <Compile Include="Migrations\201701131254000_h.Designer.cs">
+      <DependentUpon>201701131254000_h.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Course.cs" />
@@ -250,16 +249,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Graph.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\SignOutCallback.cshtml" />
-    <Content Include="Views\Home\Photo.cshtml" />
-    <Content Include="Views\Courses\Course_Page.cshtml" />
     <Content Include="Views\Degree\GetDegrees.cshtml" />
-    <Content Include="Views\Courses\GetCourses.cshtml" />
     <Content Include="Views\Projects\Course_Projects.cshtml" />
-    <Content Include="Views\Doubt\Course_doubt.cshtml" />
+    <Content Include="Views\Home\getStudentCorses.cshtml" />
+    <Content Include="Views\Shared\getCourses.cshtml" />
+    <Content Include="Views\Doubt\Course_doubts.cshtml" />
+    <Content Include="Views\Projects\ShowProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -282,8 +279,8 @@
     <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612291733273_n.resx">
-      <DependentUpon>201612291733273_n.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701131254000_h.resx">
+      <DependentUpon>201701131254000_h.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

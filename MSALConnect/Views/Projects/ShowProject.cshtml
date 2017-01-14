@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "ShowProject";
+}
+<html>
+<head>
+    @Styles.Render("~/Content/ShowProjetos.css")
+</head>
+<body>
+    <h2>ShowProject</h2>
+    @{
+        string[] po;
+
+        po = @ViewBag.PathName.Split('\\');
+        string por = po[3];
+        @Html.ActionLink(por, "Download", "Projects", new { pathName = ViewBag.PathName, fileName = por }, null)
+    }
+</body>
+</html>

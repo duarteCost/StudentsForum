@@ -1,0 +1,41 @@
+﻿@using System.Collections
+@using System.Diagnostics.PerformanceData
+@using System.Runtime.CompilerServices
+@using MSALConnect.Models
+
+@{
+    ViewBag.Title = "getCourses";
+}
+
+<h2>Minhas Disciplinas</h2>
+@{
+    int x = 0;
+    ViewBag.Title = "GetCourses";
+    List<Course> courses = new List<Course>() ;
+
+    string elementsNumber = Session["Count"].ToString();
+    int j = int.Parse(elementsNumber);
+
+
+    for (int i = 1; i<=j; i++)
+    {
+        Course course = new Course();
+        course.name = Session["courseName" + i].ToString();
+        var id = Session["courseId" + i].ToString();
+        course.id = int.Parse(id);
+        courses.Add(course);
+    }
+    <ul>
+        @foreach (var course in courses)
+        {
+
+            string courseName = @course.name;
+            <li><a href="#">@courseName</a></li>
+            <div style="">
+                <li> @Html.ActionLink("Dúvidas da disciplina", "Course_Doubts", "Doubt", new {id = @course.id}, null)</li>
+                <li> @Html.ActionLink("Projetos da Disciplina", "Course_Projects", "Projects", new {id = @course.id}, null)</li>
+            </div>
+        }
+    </ul>
+
+}

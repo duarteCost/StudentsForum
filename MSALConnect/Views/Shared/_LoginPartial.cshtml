@@ -11,6 +11,7 @@
             <li class="navbar-text">
                 @*The 'preferred_aUsername' claim can be used for showing the aUser's primary way of identifying themselves.*@
                 Hello, @(System.Security.Claims.ClaimsPrincipal.Current.FindFirst("preferred_aUsername")?.Value)
+              
             </li>
             <li>
                 @Html.ActionLink(Resource.SignOut, "SignOut", "Account")

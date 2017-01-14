@@ -50,8 +50,32 @@ namespace MSALConnect.Migrations
                                 semester = 1,
                                 year = 4
                             },
+                      },
+                      
+                      students =  new List<Student>()
+                      {
+                          new Student()
+                          {
+                              studentNumber = 2084813,
+                              name = "Jacinto Duarte Afonso Costa",
+                              email = "2084813@student.uma.pt"
+                          },
+                          new Student()
+                          {
+                              studentNumber = 2071213,
+                              name = "Pedro António Gouveia Mendonça",
+                              email = "2071213@student.uma.pt"
+                          },
+                          new Student()
+                          {
+                              studentNumber = 2063210,
+                              name = "Jorge Duarte Lomelino Calaça",
+                              email = "2063210@student.uma.pt"
+                          },
 
                       }
+
+
                   },
                   new Degree
                   {
@@ -85,8 +109,31 @@ namespace MSALConnect.Migrations
                             semester = 1,
                             year = 4
 
-                        }
-                    }
+                        },
+                    },
+
+                      students = new List<Student>()
+                      {
+                          new Student()
+                          {
+                              studentNumber = 2084713,
+                              name = "Amaro Afonso Costa",
+                              email = "2084713@student.uma.pt"
+                          },
+                          new Student()
+                          {
+                              studentNumber = 2081213,
+                              name = "vitor António Gouveia Mendonça",
+                              email = "2081213@student.uma.pt"
+                          },
+                          new Student()
+                          {
+                              studentNumber = 2063710,
+                              name = "Ruben Lomelino Calaça",
+                              email = "2063710@student.uma.pt"
+                          },
+
+                      }
                   },
                   new Degree
                   {
