@@ -61,7 +61,7 @@ namespace MSALConnect.Controllers
             var course = db.Courses.Find(id);
             if (course != null)
             {
-                ViewBag.course = course;
+                Session["CorseNameInProjects"] = course.name;
             }
             return View();
         }

@@ -8,11 +8,11 @@
 <body>
     <h2>ShowProject</h2>
     @{
-        string[] po;
+        string[] slicedPath;
 
-        po = @ViewBag.PathName.Split('\\');
-        string por = po[3];
-        @Html.ActionLink(por, "Download", "Projects", new { pathName = ViewBag.PathName, fileName = por }, null)
+        slicedPath = @ViewBag.PathName.Split('\\');
+        string fileName = slicedPath[11];
+        @Html.ActionLink(fileName, "Download", "Projects", new { pathName = ViewBag.PathName, fileName = fileName }, null)
     }
 </body>
 </html>
