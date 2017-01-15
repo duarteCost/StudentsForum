@@ -11,6 +11,8 @@ namespace MSALConnect.Models
         public DateTime date { get; set; }
         public string content{ get; set; }
 
-        public virtual AnswerFile answerFile { get; set; }
+        public virtual Doubt doubts { get; set; }
+        public virtual Student student { get; set; }
+        public virtual Teacher teacher { get; set; }
     }
 }

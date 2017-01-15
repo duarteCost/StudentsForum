@@ -9,10 +9,12 @@ namespace MSALConnect.Models
     {
         public int workID { get; set; }
         public string name { get; set; }
+        public string nameWork { get; set; }
         public string filePath { get; set; }
 
         public virtual Student student { get; set; }
-        public virtual Course course { get; set; } 
+        public virtual Course course { get; set; }
+        public virtual Classification classication { get; set; }
         public virtual ICollection<Doubt> doubts { get; set; }
     }
 }

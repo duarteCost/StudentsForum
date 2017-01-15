@@ -40,10 +40,11 @@ namespace MSALConnect.Controllers
             return View("Course_Projects");
         }
 
-        public ActionResult ShowProject(string pathName, string fileName)
+        public ActionResult ShowProject(int id)
         {
-            ViewBag.PathName = pathName;
-            ViewBag.fileName = fileName;
+            DB_DIS db = new DB_DIS();
+            Work work = db.Works.Find(id);
+            ViewBag.work = work;
             return View();
         }
 
@@ -86,7 +87,7 @@ namespace MSALConnect.Controllers
                 file.SaveAs(path);
                 // adicionar na base de dados
                 AnswerFile file1 = new AnswerFile() { name = fileName, filePath = path};
-                Answer answer = new Answer() {  answerFile = file1 }; 
+               // Answer answer = new Answer() {  answerFile = file1 }; 
 
                 //db.Answers.
                 //db.SaveChanges();

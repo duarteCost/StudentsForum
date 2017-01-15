@@ -27,11 +27,11 @@
         <!-- ---------------- -->
         <div class="listProjects">
             <ul>
-                @foreach (var projeto in ViewBag.Projetos)
+                @foreach (var project in ViewBag.Projetos)
                 {
-                    string n = projeto.name;
-                    string p = projeto.filePath;
-                    <li class="boxList">@Html.ActionLink(n, "ShowProject", "Projects", new { pathName = p, fileName = n}, null)</li>
+                    string n = project.name;
+                    var id = project.workID;
+                    <li class="boxList">@Html.ActionLink(n, "ShowProject", "Projects", new { id = @id}, null)</li>
                 }
 
             </ul>
