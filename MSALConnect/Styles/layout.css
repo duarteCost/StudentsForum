@@ -5,9 +5,16 @@
     padding-left: 0%;
     margin-right: 0%;
     margin-left: 0%;
+    float: left;
+    width: 96%;
 }
 
 .navbar {
     border-radius: 0px;
     margin: 0% 0% 0% 0%;
+    border-bottom: 0px;
+}
+
+#myCourses {
+    margin-left: 30%;
 }

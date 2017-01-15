@@ -16,7 +16,7 @@
     @Scripts.Render("https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.6.2.js")
     <link href="../../Styles/layout.css" type="text/css" rel="stylesheet" />
 </head>
-<body style ="margin-top: 3.5%">
+<body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header" >
@@ -29,7 +29,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Minhas disciplinas", "Index", "Home" )</li>
+                    <li id ="myCourses">@Html.ActionLink("Minhas disciplinas", "Index", "Home" )</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

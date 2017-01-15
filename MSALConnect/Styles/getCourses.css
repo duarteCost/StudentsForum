@@ -7,27 +7,50 @@
     width: 20%;
     height: 100%;
     float: left;
-    background-color:rgb(51,51,51);
+    background-color:rgb(34, 34, 34);
+    background-image:linear-gradient(rgb(60, 60, 60) 0px, rgb(34, 34, 34) 100%);
+    background-repeat: repeat-x;
+    border-bottom-color:rgb(51, 51, 51);
     position:fixed;
     z-index:999; 
     overflow:hidden;
     text-align: center;
     padding: 3% 0% 0% 0% ;
-    font-size: 12px;
+    font-size: 1.2vw;
+    flex: auto;
     }
 
 .getCorsesUl {
     list-style-type: none;
-    padding: 0% 0% 0% 0% ;
+    padding: 25% 0% 0% 0% ;
 }
 
 
-.getCorsesLi a {
+div.navbarLeft a {
     display: block;
-    color: white;
+    color:rgb(135,130,129);
     text-align: center;
     padding: 3%;
+    
     text-decoration: none;
+}
+
+div.navbarLeft a {
+    display: block;
+    color:rgb(135,130,129);
+    text-align: center;
+    padding: 3%;
+    
+    text-decoration: none;
+}
+
+div.navbarLeft a {
+    text-decoration: none;
+}
+
+ li a:hover {
+    color:white ;
     border-bottom: black 1px solid;
+    
 }
 

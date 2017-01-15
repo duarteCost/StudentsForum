@@ -185,9 +185,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701131254000_h.cs" />
-    <Compile Include="Migrations\201701131254000_h.Designer.cs">
-      <DependentUpon>201701131254000_h.cs</DependentUpon>
+    <Compile Include="Migrations\201701141857477_p.cs" />
+    <Compile Include="Migrations\201701141857477_p.Designer.cs">
+      <DependentUpon>201701141857477_p.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Course.cs" />
@@ -281,8 +281,8 @@
     <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701131254000_h.resx">
-      <DependentUpon>201701131254000_h.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701141857477_p.resx">
+      <DependentUpon>201701141857477_p.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
