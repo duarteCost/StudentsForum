@@ -11,8 +11,11 @@
         string[] slicedPath;
 
         slicedPath = @ViewBag.PathName.Split('\\');
-        string fileName = slicedPath[11];
-        @Html.ActionLink(fileName, "Download", "Projects", new { pathName = ViewBag.PathName, fileName = fileName }, null)
+        string fileName = slicedPath[slicedPath.Length - 1];
+        @Html.ActionLink(fileName, "Download", "Projects", new
+        {
+            pathName = ViewBag.PathName,
+            fileName = fileName }, null)
     }
 </body>
 </html>
