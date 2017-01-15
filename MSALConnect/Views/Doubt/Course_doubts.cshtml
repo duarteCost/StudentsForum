@@ -1,10 +1,117 @@
-﻿@{
-    ViewBag.Title = "Dúvidas da disciplina";
-    var courseName = @ViewBag.course.name;
-    var courseId = @ViewBag.course.id;
-    Session["getCoursesState"] = @courseId;
+﻿
+
+
+@{
+    ViewBag.Title = "Course_doubts";
 }
 
-<h2>Dúvidas da disciplina</h2>
-<p>@courseName</p>
+<link href="../../Styles/Course_doubts.css" type="text/css" rel="stylesheet" />
 
+<script type="text/javascript">
+        function exibe(el) {
+
+            var display = document.getElementById(el).style.display;
+            if (display == "none")
+                document.getElementById(el).style.display = 'block';
+            else
+                document.getElementById(el).style.display = 'none';
+        }
+</script>
+
+@model MSALConnect.Models.Doubt
+@using (Html.BeginForm("Doubt", "Doubt", FormMethod.Post))
+{
+    <div class="newDoub">
+        <div class="form-horizontal">
+            <h1>Doubt</h1>
+            <hr />
+          
+            <div class="form-group">
+                <p>Question</p>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.question, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.question, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+               <p>Content</p>
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.content, new { htmlAttributes = new { @class = "form-control", rows = "300", cols = "300" } })
+                   <p1> @Html.ValidationMessageFor(model => model.content, "", new { @class = "text-danger" })</p1>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+@foreach (var doubt in ViewBag.Doubts)
+{
+         <div class="contentDoubts">
+                 <div><p>@doubt.question</p></div>
+                 <div>@doubt.content</div>
+            
+             <a onclick="exibe('@doubt.doubtID')" href="#">@doubt.doubtID</a>
+             <div id="@doubt.doubtID" style="display: none">
+            
+          @*       @using (Html.BeginForm("Login", "Answer", FormMethod.Post))
+                 {
+
+
+                     <div class="form-horizontal">
+                         <h4>Answer</h4>
+                         <hr />
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(mode => mode.date, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(mode => mode.date, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(mode => mode.date, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+                         <div class="form-group">
+                             @Html.LabelFor(model => model.content, htmlAttributes: new { @class = "control-label col-md-2" })
+                             <div class="col-md-10">
+                                 @Html.EditorFor(model => model.content, new { htmlAttributes = new { @class = "form-control" } })
+                                 @Html.ValidationMessageFor(model => model.content, "", new { @class = "text-danger" })
+                             </div>
+                         </div>
+
+                         <div class="form-group">
+                             <div class="col-md-offset-2 col-md-10">
+                                 <input type="submit" value="Create" class="btn btn-default" />
+                             </div>
+                         </div>
+                     </div>
+                 }
+        *@
+             </div>
+            
+
+            
+
+             </div>
+
+
+
+}
+
+
+
+
+    
