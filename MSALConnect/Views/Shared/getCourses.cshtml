@@ -56,7 +56,8 @@
                         <div id="@courseId" style="display: none">
                             <ul>
                                 <li class="getCorsesLi">
-                                    <p class="getCorsesP"> @Html.ActionLink("Dúvidas da disciplina", "Course_Doubts", "Doubt", new {id = @course.id}, null)</p></li>
+                                    <p class="getCorsesP"> @Html.ActionLink("Duvidas da Disciplina", "Create", "Doubt", new { id = @course.id }, null)</p>
+                                </li>
                                 <li class="getCorsesLi">
                                     <p class="getCorsesP"> @Html.ActionLink("Projetos da Disciplina", "Course_Projects", "Projects", new {id = @course.id}, null)</p></li>
                             </ul>

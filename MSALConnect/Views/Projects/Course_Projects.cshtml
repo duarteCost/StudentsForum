@@ -7,7 +7,7 @@
         var courseName = Session["CorseNameInProjects"];
         string title = "Projetos de " + @courseName;
         ViewBag.Title = title;
-        var courseId = @ViewBag.course.id;
+        var courseId = Session["getCoursesId"];
         Session["getCoursesState"] = @courseId;
     }
 </head>
