@@ -72,21 +72,22 @@ namespace MSALConnect.Controllers
         }
         // este metodo é para a parte do jorge
         [HttpPost]
-        public ActionResult uploadFileResposta(HttpPostedFileBase file)
+        public ActionResult uploadFileResposta(HttpPostedFileBase file, int doubtId, int answerId)
         {
             DB_DIS db = new DB_DIS();
-            Doubt boubt = db.Doubts.Find(/*id*/);
-           // Answer answer = new Answer() { answerFile = file1 };
-           // boubt.answers.Add(answer);
+            //Doubt doubt = db.Doubts.Find(doubtId);
+            //Answer answer = new Answer();
+            //answer.doubts = doubt;
+            //doubt.answers.Add(answer);
+            Answer answer = db.Answers.Find(answerId);
 
-           // Answer answer = db.Answers.Find(/*id*/);
             if (file != null && file.ContentLength > 0)
             {
                 var fileName = Path.GetFileName(file.FileName);
                 var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
                 file.SaveAs(path);
                 // adicionar na base de dados
-                AnswerFile file1 = new AnswerFile() { name = fileName, filePath = path};
+                AnswerFile file1 = new AnswerFile() { name = fileName, filePath = path, answer = answer};
                // Answer answer = new Answer() {  answerFile = file1 }; 
 
                 //db.Answers.
