@@ -69,6 +69,32 @@ namespace MSALConnect.Controllers
             }
             return View();
         }
+        // este metodo é para a parte do jorge
+        [HttpPost]
+        public ActionResult uploadFileResposta(HttpPostedFileBase file)
+        {
+            DB_DIS db = new DB_DIS();
+            Doubt boubt = db.Doubts.Find(/*id*/);
+           // Answer answer = new Answer() { answerFile = file1 };
+           // boubt.answers.Add(answer);
+
+           // Answer answer = db.Answers.Find(/*id*/);
+            if (file != null && file.ContentLength > 0)
+            {
+                var fileName = Path.GetFileName(file.FileName);
+                var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                file.SaveAs(path);
+                // adicionar na base de dados
+                AnswerFile file1 = new AnswerFile() { name = fileName, filePath = path};
+                Answer answer = new Answer() {  answerFile = file1 }; 
+
+                //db.Answers.
+                //db.SaveChanges();
+            }
+           // var w = course.works;
+          //  ViewBag.Projetos = w;
+            return View("Course_Projects");
+        }
     }
 
 }

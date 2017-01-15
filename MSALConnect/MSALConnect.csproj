@@ -185,11 +185,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701151249435_c.cs" />
-    <Compile Include="Migrations\201701151249435_c.Designer.cs">
-      <DependentUpon>201701151249435_c.cs</DependentUpon>
+    <Compile Include="Migrations\201701151548237_m.cs" />
+    <Compile Include="Migrations\201701151548237_m.Designer.cs">
+      <DependentUpon>201701151548237_m.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\AnswerFile.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\DB_DIS.cs" />
     <Compile Include="Models\Degree.cs" />
@@ -293,8 +294,8 @@
     <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701151249435_c.resx">
-      <DependentUpon>201701151249435_c.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701151548237_m.resx">
+      <DependentUpon>201701151548237_m.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
