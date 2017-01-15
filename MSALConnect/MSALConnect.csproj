@@ -179,19 +179,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ClassificationController.cs" />
     <Compile Include="Controllers\DegreeController.cs" />
     <Compile Include="Controllers\DoubtController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701151620117_x.cs" />
-    <Compile Include="Migrations\201701151620117_x.Designer.cs">
-      <DependentUpon>201701151620117_x.cs</DependentUpon>
+    <Compile Include="Migrations\201701151632583_m.cs" />
+    <Compile Include="Migrations\201701151632583_m.Designer.cs">
+      <DependentUpon>201701151632583_m.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Answer.cs" />
-    <Compile Include="Models\Classification.cs" />
+    <Compile Include="Models\AnswerFile.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\DB_DIS.cs" />
     <Compile Include="Models\Degree.cs" />
@@ -245,12 +244,12 @@
     <Content Include="App_Data\uploads\seguranc3a7a-nessus-final.pptx" />
     <None Include="Scripts\_references.js" />
     <Content Include="Global.asax" />
-    <Content Include="Styles\Cassification.css" />
     <Content Include="Styles\Course_doubts.css" />
     <Content Include="Styles\Course_Projects.css" />
     <Content Include="Styles\getCourses.css" />
     <Content Include="Styles\layout.css" />
     <Content Include="Styles\ShowProject.css" />
+    <Content Include="Views\Doubt\Course_doubts.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -272,9 +271,7 @@
     <Content Include="Views\Projects\Course_Projects.cshtml" />
     <Content Include="Views\Home\getStudentCorses.cshtml" />
     <Content Include="Views\Shared\getCourses.cshtml" />
-    <Content Include="Views\Doubt\Course_doubts.cshtml" />
     <Content Include="Views\Projects\ShowProject.cshtml" />
-    <Content Include="Views\Classification\classify.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -297,8 +294,8 @@
     <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701151620117_x.resx">
-      <DependentUpon>201701151620117_x.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701151632583_m.resx">
+      <DependentUpon>201701151632583_m.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

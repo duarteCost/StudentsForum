@@ -15,7 +15,9 @@ namespace MSALConnect.Models
         public string name { get; set; }
         public int semester { get; set; }
         public int year { get; set; }
-        
+
+        public virtual Teacher teacher { get; set; }
+        public virtual Degree degree { get; set; }
         public virtual ICollection<Doubt> doubts { get; set; }
         public virtual ICollection<Work> works { get; set; }
     }

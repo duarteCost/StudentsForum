@@ -12,9 +12,10 @@
 .newProject {
     width: 90%;
     padding: 5%;
-    border-color: darkslategray;
+    border-color: #a1a1a1;
     border-style: solid;
-    border-width: 3px;
+    border-width: 2px;
+    border-radius: 5px;
     margin-left: 5%;
 }
 .newProject h4{
@@ -33,6 +34,7 @@
 }
 
 .listProjects {
+
 }
 .listProjects p{
     width: 50px;
@@ -43,8 +45,11 @@
     width: 20%;    
     list-style: none;
     float: left;
-    border-color: darkslategray;
+    
+    border-color: #a1a1a1;
     border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
     overflow: hidden;
 }
 .boxList a{
