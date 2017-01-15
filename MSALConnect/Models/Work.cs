@@ -9,6 +9,7 @@ namespace MSALConnect.Models
     {
         public int workID { get; set; }
         public string name { get; set; }
+        public string nameWork { get; set; }
         public string filePath { get; set; }
 
         public virtual Student student { get; set; }

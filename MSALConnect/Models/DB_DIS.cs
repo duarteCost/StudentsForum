@@ -21,5 +21,6 @@ namespace MSALConnect.Models
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<AnswerFile> AnswerFiles { get; set; }
+        public virtual DbSet<Classification> Classification { get; set; }
     }
 }

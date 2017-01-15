@@ -190,6 +190,10 @@
     <Compile Include="Migrations\201701151702104_a.Designer.cs">
       <DependentUpon>201701151702104_a.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701151720271_n.cs" />
+    <Compile Include="Migrations\201701151720271_n.Designer.cs">
+      <DependentUpon>201701151720271_n.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\AnswerFile.cs" />
     <Compile Include="Models\Classification.cs" />
@@ -300,6 +304,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701151702104_a.resx">
       <DependentUpon>201701151702104_a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701151720271_n.resx">
+      <DependentUpon>201701151720271_n.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
