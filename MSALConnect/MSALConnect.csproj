@@ -248,6 +248,7 @@
     <Content Include="Styles\getCourses.css" />
     <Content Include="Styles\layout.css" />
     <Content Include="Styles\ShowProject.css" />
+    <Content Include="Views\Doubt\Course_doubts.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -269,7 +270,6 @@
     <Content Include="Views\Projects\Course_Projects.cshtml" />
     <Content Include="Views\Home\getStudentCorses.cshtml" />
     <Content Include="Views\Shared\getCourses.cshtml" />
-    <Content Include="Views\Doubt\Course_doubts.cshtml" />
     <Content Include="Views\Projects\ShowProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
