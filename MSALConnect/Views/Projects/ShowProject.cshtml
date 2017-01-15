@@ -4,15 +4,40 @@
 <html>
 <head>
     <link href="../../Styles/ShowProject.css" type="text/css" rel="stylesheet" />
+    <link href="../../Styles/Cassification.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="contain">
-        <h2>ShowProject</h2>
-        @{
-            string path = ViewBag.PathName;
-            string name = ViewBag.fileName;
-            @Html.ActionLink(name, "Download", "Projects", new { pathName = path, fileName = name }, null)
-        }
-    </div>
+<div class="contain">
+    <h2>ShowProject</h2>
+    @{
+        string path = ViewBag.work.filePath;
+        string name = ViewBag.work.name;
+        int id = ViewBag.work.workID;
+        @Html.ActionLink(name, "Download", "Projects", new { pathName = path, fileName = name }, null)
+    }
+    <!--Classificaton of project-->
+    <form action =" /Classification/classify" method="post">
+        <div class="estrelas">
+            <input type="radio" id="cm_star-empty" name="rate" value="" checked />
+            <label for="cm_star-1"><i class="fa"></i></label>
+            <input type="radio" id="cm_star-1" name="rate" value="1" />
+            <label for="cm_star-2"><i class="fa"></i></label>
+            <input type="radio" id="cm_star-2" name="rate" value="2" />
+            <label for="cm_star-3"><i class="fa"></i></label>
+            <input type="radio" id="cm_star-3" name="rate" value="3" />
+            <label for="cm_star-4"><i class="fa"></i></label>
+            <input type="radio" id="cm_star-4" name="rate" value="4" />
+            <label for="cm_star-5"><i class="fa"></i></label>
+            <input type="radio" id="cm_star-5" name="rate" value="5" />
+            <input type="hidden" name ="id" value ="@id"/>
+            <input type ="submit" name ="Classificar"/>
+            <br />
+        </div>
+    </form>
+     
+    
+</div>
+
 </body>
 </html>

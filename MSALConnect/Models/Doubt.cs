@@ -11,6 +11,7 @@ namespace MSALConnect.Models
         public string question { get; set; }
         public string content { get; set; }
         public virtual Course course { get; set; }
+        public virtual Classification classication { get; set; }
         public virtual ICollection<Answer> answers { get; set; }
     }
 }

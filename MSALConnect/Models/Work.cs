@@ -12,7 +12,8 @@ namespace MSALConnect.Models
         public string filePath { get; set; }
 
         public virtual Student student { get; set; }
-        public virtual Course course { get; set; } 
+        public virtual Course course { get; set; }
+        public virtual Classification classication { get; set; }
         public virtual ICollection<Doubt> doubts { get; set; }
     }
 }

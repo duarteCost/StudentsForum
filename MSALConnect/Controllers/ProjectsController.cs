@@ -40,10 +40,11 @@ namespace MSALConnect.Controllers
             return View("Course_Projects");
         }
 
-        public ActionResult ShowProject(string pathName, string fileName)
+        public ActionResult ShowProject(int id)
         {
-            ViewBag.PathName = pathName;
-            ViewBag.fileName = fileName;
+            DB_DIS db = new DB_DIS();
+            Work work = db.Works.Find(id);
+            ViewBag.work = work;
             return View();
         }
 
