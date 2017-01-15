@@ -5,6 +5,8 @@
         @{
             ViewBag.Title = "Projetos da Disciplina";
             var courseName = Session["CorseNameInProjects"];
+            var courseId = @ViewBag.course.id;
+            Session["getCoursesState"] = @courseId;
         }
         <link rel="stylesheet" type="text/css" href="../../App_GlobalResources/Content/ShowProjetos.css">
     </head>
