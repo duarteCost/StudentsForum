@@ -22,7 +22,7 @@ namespace MSALConnect.Controllers
             Work work = db.Works.Find(id);
             if (work.classication.classificationId == null)
             {
-                //Classification classification = new Classification() { classificationNamber = fileName, filePath = path, course = course, student = student };
+                //Classification classification = new Classification() { classificationNamber = fileName, filePath = path, ce = course, student = student };
                 //db.Answers.Add(answer);
                 //db.SaveChanges();
             }
