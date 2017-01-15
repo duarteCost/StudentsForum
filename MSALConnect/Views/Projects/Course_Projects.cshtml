@@ -5,7 +5,8 @@
 
     @{
         var courseName = Session["CorseNameInProjects"];
-        ViewBag.Title = "Projetos @courseName";
+        string title = "Projetos de " + @courseName;  
+        ViewBag.Title = title;
     }
 </head>
 <body>
@@ -28,7 +29,7 @@
                 {
                     string n = projeto.name;
                     string p = projeto.filePath;
-                    <li class="boxList">@Html.ActionLink(n, "ShowProject", "Projects", new { pathName = p }, null)</li>
+                    <li class="boxList">@Html.ActionLink(n, "ShowProject", "Projects", new { pathName = p, fileName = n}, null)</li>
                 }
 
             </ul>
