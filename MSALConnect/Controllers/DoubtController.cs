@@ -49,18 +49,28 @@ namespace MSALConnect.Controllers
             return View(doubt);
         }
 
-        //[HttpPost]
-        //public ActionResult Create(Answer answer, int id)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Answers.Add(answer);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Create");
-        //    }
+        [HttpPost]
+        public ActionResult CreateAnswer(string content, int id)
+        {
+            var question = db.Doubts.Find(id);
 
-        //    return View(answer);
-        //}
+            Answer answer = new Answer() ;
+            answer.
+            answer.content = content;
+            DateTime localDate = DateTime.Now;
+            answer.date = localDate;
+            db.Answers.Add(answer);
+            db.SaveChanges();
+            //if (ModelState.IsValid)
+            //{
+
+            //    db.Answers.Add(answer);
+            //    db.SaveChanges();
+            //    return RedirectToAction("Create");
+            //}
+
+            return View("Course_doubts");
+        }
         //public ActionResult AddDoubt(String question, string content)
         //{
 
