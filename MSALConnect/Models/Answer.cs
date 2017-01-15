@@ -10,5 +10,7 @@ namespace MSALConnect.Models
         public int answerID { get; set; }
         public DateTime date { get; set; }
         public string content{ get; set; }
+
+        public virtual AnswerFile answerFile { get; set; }
     }
 }
