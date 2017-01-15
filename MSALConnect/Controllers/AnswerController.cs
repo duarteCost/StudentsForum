@@ -30,12 +30,12 @@ namespace MSALConnect.Controllers
         [HttpPost]
         public ActionResult CreateAnswer(string content, int id, int Course_id, int view)
         {
-
+            var user_id = Session["userNumber"];
             Answer answer = new Answer();
             var question = db.Doubts.Find(id);
             answer.content = content;
             DateTime localDate = DateTime.Now;
-
+            answer.student = db.Students.Find(user_id);
             answer.date = localDate;
             answer.doubts = question;
             db.Answers.Add(answer);

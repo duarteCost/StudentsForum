@@ -39,9 +39,13 @@ namespace MSALConnect.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user_id = Session["userNumber"];
                 var coursee = db.Courses.Find(id);
                 doubt.course = coursee;
-                db.Doubts.Add(doubt);
+                var user = db.Students.Find(user_id);
+                user.doubts.Add(doubt);
+                
+               // db.Doubts.Add(doubt);
                 db.SaveChanges();
                 return RedirectToAction("Create");
             }

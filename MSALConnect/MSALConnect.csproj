@@ -257,6 +257,7 @@
     <Content Include="Styles\Course_Projects.css" />
     <Content Include="Styles\getCourses.css" />
     <Content Include="Styles\layout.css" />
+    <Content Include="Styles\Home.css" />
     <Content Include="Styles\ShowProject.css" />
     <Content Include="Views\Doubt\Course_doubts.cshtml" />
     <Content Include="Web.config">
