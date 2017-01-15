@@ -185,13 +185,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701141857477_p.cs" />
-    <Compile Include="Migrations\201701141857477_p.Designer.cs">
-      <DependentUpon>201701141857477_p.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701151045372_b.cs" />
-    <Compile Include="Migrations\201701151045372_b.Designer.cs">
-      <DependentUpon>201701151045372_b.cs</DependentUpon>
+    <Compile Include="Migrations\201701151249435_c.cs" />
+    <Compile Include="Migrations\201701151249435_c.Designer.cs">
+      <DependentUpon>201701151249435_c.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Course.cs" />
@@ -247,6 +243,7 @@
     <Content Include="App_Data\uploads\seguranc3a7a-nessus-final.pptx" />
     <None Include="Scripts\_references.js" />
     <Content Include="Global.asax" />
+    <Content Include="Styles\Course_doubts.css" />
     <Content Include="Styles\Course_Projects.css" />
     <Content Include="Styles\getCourses.css" />
     <Content Include="Styles\layout.css" />
@@ -296,11 +293,8 @@
     <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701141857477_p.resx">
-      <DependentUpon>201701141857477_p.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701151045372_b.resx">
-      <DependentUpon>201701151045372_b.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701151249435_c.resx">
+      <DependentUpon>201701151249435_c.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

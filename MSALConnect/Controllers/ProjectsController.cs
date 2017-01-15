@@ -61,7 +61,7 @@ namespace MSALConnect.Controllers
             DB_DIS db = new DB_DIS();
 
             var course = db.Courses.Find(id);
-            ViewBag.course = course;
+            Session["getCoursesId"] = course.id;
             if (course != null)
             {
                 ViewBag.Projetos = course.works;

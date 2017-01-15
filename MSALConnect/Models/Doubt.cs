@@ -10,7 +10,7 @@ namespace MSALConnect.Models
         public int doubtID { get; set; }
         public string question { get; set; }
         public string content { get; set; }
-
+        public virtual Course course { get; set; }
         public virtual ICollection<Answer> answers { get; set; }
     }
 }
