@@ -55,10 +55,10 @@ namespace MSALConnect.Controllers
             var question = db.Doubts.Find(id);
 
             Answer answer = new Answer() ;
-            answer.
             answer.content = content;
             DateTime localDate = DateTime.Now;
             answer.date = localDate;
+            question.answers.Add(answer);
             db.Answers.Add(answer);
             db.SaveChanges();
             //if (ModelState.IsValid)
