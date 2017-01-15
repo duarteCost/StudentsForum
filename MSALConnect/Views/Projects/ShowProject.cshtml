@@ -3,16 +3,16 @@
 }
 <html>
 <head>
-    @Styles.Render("~/Content/ShowProjetos.css")
+    <link href="../../Styles/ShowProject.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-    <h2>ShowProject</h2>
-    @{
-        string[] slicedPath;
-
-        slicedPath = @ViewBag.PathName.Split('\\');
-        string fileName = slicedPath[11];
-        @Html.ActionLink(fileName, "Download", "Projects", new { pathName = ViewBag.PathName, fileName = fileName }, null)
-    }
+    <div class="contain">
+        <h2>ShowProject</h2>
+        @{
+            string path = ViewBag.PathName;
+            string name = ViewBag.fileName;
+            @Html.ActionLink(name, "Download", "Projects", new { pathName = path, fileName = name }, null)
+        }
+    </div>
 </body>
 </html>

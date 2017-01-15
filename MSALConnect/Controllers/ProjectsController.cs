@@ -10,6 +10,7 @@ namespace MSALConnect.Controllers
 {
     public class ProjectsController : Controller
     {
+        private static int courseID;
         // GET: Projects
         public ActionResult Index()
         {
@@ -19,49 +20,51 @@ namespace MSALConnect.Controllers
         [HttpPost]
         public ActionResult uploadFile(HttpPostedFileBase file)
         {
+            DB_DIS db = new DB_DIS();
+            var b = Session["userNumber"];
+            Course course = db.Courses.Find(courseID);
 
-            // Verify that the user selected a file
+            Student student = db.Students.Find(b);
             if (file != null && file.ContentLength > 0)
             {
-                // extract only the filename
                 var fileName = Path.GetFileName(file.FileName);
-                // store the file inside ~/App_Data/uploads folder
                 var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
                 file.SaveAs(path);
+                // adicionar na base de dados
+                Work work = new Work() { name = fileName, filePath = path, course = course, student = student };
+                db.Works.Add(work);
+                db.SaveChanges();
             }
-            string[] arquivos = Directory.GetFiles(Server.MapPath("~/App_Data/uploads"));
-            ViewBag.Projetos = arquivos;
-            // redirect back to the index action to show the form once again
+            var w = course.works;
+            ViewBag.Projetos = w;
             return View("Course_Projects");
         }
 
-        public ActionResult ShowProject(string pathName)
+        public ActionResult ShowProject(string pathName, string fileName)
         {
             ViewBag.PathName = pathName;
+            ViewBag.fileName = fileName;
             return View();
         }
 
         public FileResult Download(string pathName, string fileName)
         {
-
             string Arquivo = fileName;
             FileStream stream = new FileStream(pathName, FileMode.Open);
             return File(stream, "download", Arquivo);
-
         }
         //------------------------//
 
         public ActionResult Course_Projects(int id)
         {
-            string[] arquivos = Directory.GetFiles(Server.MapPath("~/App_Data/uploads"));
-            ViewBag.Projetos = arquivos;
+            courseID = id;
             DB_DIS db = new DB_DIS();
-
 
             var course = db.Courses.Find(id);
             ViewBag.course = course;
             if (course != null)
             {
+                ViewBag.Projetos = course.works;
                 Session["CorseNameInProjects"] = course.name;
             }
             return View();

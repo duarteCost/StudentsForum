@@ -189,6 +189,10 @@
     <Compile Include="Migrations\201701141857477_p.Designer.cs">
       <DependentUpon>201701141857477_p.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701151045372_b.cs" />
+    <Compile Include="Migrations\201701151045372_b.Designer.cs">
+      <DependentUpon>201701151045372_b.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\DB_DIS.cs" />
@@ -228,14 +232,25 @@
     <Content Include="App_Data\TokensCache_log.ldf">
       <DependentUpon>TokensCache.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\uploads\project_credintials.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="App_GlobalResources\Content\Site.css" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Content Include="App_Data\uploads\2º Trabalho Prático.docx" />
+    <Content Include="App_Data\uploads\2º Trabalho Prático.pdf" />
+    <Content Include="App_Data\uploads\aaaa.odt" />
+    <Content Include="App_Data\uploads\Apresentação1.pptx" />
+    <Content Include="App_Data\uploads\Enunciado 2º Trabalho Prático.pdf" />
+    <Content Include="App_Data\uploads\Nessus Vulnerability Scanner.pptx" />
+    <Content Include="App_Data\uploads\Relatório 2º Trabalho Prático GSR Atualizado.docx" />
+    <Content Include="App_Data\uploads\seguranc3a7a-nessus-final.pptx" />
     <None Include="Scripts\_references.js" />
     <Content Include="Global.asax" />
+    <Content Include="Styles\Course_Projects.css" />
     <Content Include="Styles\getCourses.css" />
     <Content Include="Styles\layout.css" />
+    <Content Include="Styles\ShowProject.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -283,6 +298,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701141857477_p.resx">
       <DependentUpon>201701141857477_p.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701151045372_b.resx">
+      <DependentUpon>201701151045372_b.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,35 +1,39 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
+<head>
+    <link href="../../Styles/Course_Projects.css" type="text/css" rel="stylesheet" />
 
-        @{
-            ViewBag.Title = "Projetos da Disciplina";
-            var courseName = Session["CorseNameInProjects"];
-            var courseId = @ViewBag.course.id;
-            Session["getCoursesState"] = @courseId;
-        }
-        <link rel="stylesheet" type="text/css" href="../../App_GlobalResources/Content/ShowProjetos.css">
-    </head>
-    <body>
-        <h2>Projetos da Disciplina</h2>
-        <p>@courseName</p>
+    @{
+        var courseName = Session["CorseNameInProjects"];
+        string title = "Projetos de " + @courseName;  
+        ViewBag.Title = title;
+    }
+</head>
+<body>
+    <div class="contain">
+        <h2>Projetos de @courseName</h2>
+        <p></p>
         <!-- UPLOAD DE FICHEIROS -->
-        @using (Html.BeginForm("uploadFile", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            <input type="file" name="file" />
-            <input type="submit" value="OK" />
-        }
-        <!--  ---------------- -->
-    <ul>
-        @foreach (var projeto in ViewBag.Projetos)
-        {
-            string[] slicedPath;
+        <div class="newProject">
+            <h4>Adicionar um novo Projecto:</h4>
+            @using (Html.BeginForm("uploadFile", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <input id="search" type="file" name="file" />
+                <input id="submit" type="submit" value="Submeter" />
+            }
+        </div>
+        <!-- ---------------- -->
+        <div class="listProjects">
+            <ul>
+                @foreach (var projeto in ViewBag.Projetos)
+                {
+                    string n = projeto.name;
+                    string p = projeto.filePath;
+                    <li class="boxList">@Html.ActionLink(n, "ShowProject", "Projects", new { pathName = p, fileName = n}, null)</li>
+                }
 
-            slicedPath = projeto.Split('\\');
-            @Html.ActionLink(slicedPath[11],  "ShowProject", "Projects", new {pathName = projeto}, null)
-
-        }
-       
-    </ul>
-    </body>
+            </ul>
+            <p>asdfda</p>
+        </div>
+</body>
 </html>

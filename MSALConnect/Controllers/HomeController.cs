@@ -24,6 +24,8 @@ namespace MSALConnect.Controllers
             var studentNumberString = studentNumber[0];
             var studentNumberInt = int.Parse(studentNumberString);
 
+            Session["userNumber"] = studentNumberInt;
+
             DB_DIS db = new DB_DIS();
 
 
