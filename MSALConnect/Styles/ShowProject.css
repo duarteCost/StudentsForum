@@ -9,3 +9,22 @@
     padding: 5%;
 }
 
+.newDoub{
+  margin-top:10%;
+  margin-left:30%;
+
+   border: 2px solid #a1a1a1;
+    padding: 10px 40px; 
+
+   
+    border-radius: 10px;
+}
+
+.contentDoubts{
+  margin-top:1%;
+  margin-left:30%;
+
+   border: 2px solid #a1a1a1;
+    padding: 10px 40px; 
+    border-radius: 5px;
+}

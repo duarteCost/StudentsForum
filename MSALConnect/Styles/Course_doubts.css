@@ -26,9 +26,14 @@ h1{
 font-weight: bold;
 }
 p{
+  
     font-weight: bold;
 }
 
+.response{
+    text-align:right;
+
+}
 .TextAreaFor {
   width: 300px;
   height: 150px;

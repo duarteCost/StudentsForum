@@ -1,0 +1,38 @@
+﻿
+
+
+<link href="../../Styles/Doubts_Answers.css" type="text/css" rel="stylesheet" />
+<h2>@ViewBag.doubt.question</h2>
+<h3>@ViewBag.doubt.content</h3>
+
+<div class="contentAnswer">
+
+    <a onclick="exibe('@ViewBag.doubt.doubtID')" href="#">Respoder</a>
+    <div id="@ViewBag.doubt.doubtID" style="display: none">
+
+
+
+        <form action=" /Answer/CreateAnswer" method="post">
+        <input type="hidden" name="view" value="1" />
+        <input type="hidden" name="Course_id" value="@ViewBag.Course_id" />
+        <input type="hidden" name="id" value="@ViewBag.doubt.doubtID" />
+        <input name="content" id="content" type="textarea" />
+        <input id="submit" type="submit" value="Guardar" />
+
+        </form>
+
+
+    </div>
+</div>
+
+@foreach (var answer in ViewBag.answers)
+{
+    <div class="contentAnswer">
+        <div><p>@answer.content</p></div>
+
+    </div>
+
+
+
+}
+
