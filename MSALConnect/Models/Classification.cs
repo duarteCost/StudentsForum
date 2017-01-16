@@ -14,8 +14,7 @@ namespace MSALConnect.Models
         public double classificationNamber { get; set; }
         [DefaultValue(0)]
         public double classificationValue { get; set; }
+        public virtual ICollection<Student> students { get; set; }
 
-        public virtual ICollection<Work> works { get; set; }
-        public virtual ICollection<Doubt> doubts { get; set; }
     }
 }

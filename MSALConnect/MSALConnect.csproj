@@ -186,16 +186,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701151702104_a.cs" />
-    <Compile Include="Migrations\201701151702104_a.Designer.cs">
-      <DependentUpon>201701151702104_a.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701151720271_n.cs" />
-    <Compile Include="Migrations\201701151720271_n.Designer.cs">
-      <DependentUpon>201701151720271_n.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\AnswerFile.cs" />
+    <Compile Include="Models\StudentsClassification.cs" />
     <Compile Include="Models\Classification.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\DB_DIS.cs" />
@@ -279,7 +272,6 @@
     <Content Include="Views\Home\getStudentCorses.cshtml" />
     <Content Include="Views\Shared\getCourses.cshtml" />
     <Content Include="Views\Projects\ShowProject.cshtml" />
-    <Content Include="Views\Classification\classify.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -300,14 +292,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701151702104_a.resx">
-      <DependentUpon>201701151702104_a.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701151720271_n.resx">
-      <DependentUpon>201701151720271_n.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
