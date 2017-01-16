@@ -18,7 +18,7 @@ namespace MSALConnect.Controllers
         }
 
         [HttpPost]
-        public ActionResult uploadFile(HttpPostedFileBase file)
+        public ActionResult uploadFile(HttpPostedFileBase file, string nameWork)
         {
             DB_DIS db = new DB_DIS();
             var b = Session["userNumber"];
@@ -31,7 +31,7 @@ namespace MSALConnect.Controllers
                 var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
                 file.SaveAs(path);
                 // adicionar na base de dados
-                Work work = new Work() { name = fileName, filePath = path, course = course, student = student };
+                Work work = new Work() { name = fileName, nameWork = nameWork, filePath = path, course = course, student = student };
                 db.Works.Add(work);
                 db.SaveChanges();
             }
@@ -76,33 +76,6 @@ namespace MSALConnect.Controllers
                 Session["CorseNameInProjects"] = course.name;
             }
             return View();
-        }
-        // este metodo é para a parte do jorge
-        [HttpPost]
-        public ActionResult uploadFileResposta(HttpPostedFileBase file, int doubtId, int answerId)
-        {
-            DB_DIS db = new DB_DIS();
-            //Doubt doubt = db.Doubts.Find(doubtId);
-            //Answer answer = new Answer();
-            //answer.doubts = doubt;
-            //doubt.answers.Add(answer);
-            Answer answer = db.Answers.Find(answerId);
-
-            if (file != null && file.ContentLength > 0)
-            {
-                var fileName = Path.GetFileName(file.FileName);
-                var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
-                file.SaveAs(path);
-                // adicionar na base de dados
-                AnswerFile file1 = new AnswerFile() { name = fileName, filePath = path, answer = answer};
-               // Answer answer = new Answer() {  answerFile = file1 }; 
-
-                //db.Answers.
-                //db.SaveChanges();
-            }
-           // var w = course.works;
-          //  ViewBag.Projetos = w;
-            return View("Course_Projects");
         }
     }
 

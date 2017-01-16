@@ -71,18 +71,18 @@
             
              <p class="response"><a onclick="exibe('@doubt.doubtID')" href="#">Respoder</a></p>
              <div id="@doubt.doubtID" style="display: none">
-            
-
-               
-                    <form action=" /Answer/CreateAnswer" method="post">
-                      <input type="hidden" name="view" value="0" />
-                      <input type="hidden" name="Course_id" value="@ViewBag.Course_id" />
-                      <input type="hidden" name="id" value="@doubt.doubtID" />
-                     <input name="content" id="content" type="textarea"/>
-                     <input id="submit" type="submit" value="Guardar" />
-                    </form> 
                  
-                    
+                 @using (Html.BeginForm("CreateAnswer", "Answer", FormMethod.Post, new {enctype = "multipart/form-data"}))
+                 {
+                     <input type="hidden" name="view" value="0"/>
+                     <input type="hidden" name="Course_id" value="@ViewBag.Course_id"/>
+                     <input type="hidden" name="id" value="@doubt.doubtID"/>
+                     <input type="hidden" name="enctype" value="multipart/form-data"/>
+                     <input name="content" id="content" type="textarea"/>
+                     <input id="file" type="file" name="file"/>
+                     <input id="submit" type="submit" value="Submeter"/>
+                 }
+
 
              </div>
             

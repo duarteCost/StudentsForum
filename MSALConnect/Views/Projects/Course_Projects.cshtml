@@ -17,9 +17,13 @@
         <p></p>
         <!-- UPLOAD DE FICHEIROS -->
         <div class="newProject">
-            <h4>Adicionar um novo Projecto:</h4>
             @using (Html.BeginForm("uploadFile", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
+                <h4>Adicionar um novo Projecto:</h4>
+                <br>
+                <h5>Nome do Projeto:</h5>
+                <input size="90" name="nameWork" id="content" placeholder="escreva aqui o nome do projeto" type="text"/>
+                <h5>Escolha o Projeto:</h5>
                 <input id="search" type="file" name="file" />
                 <input id="submit" type="submit" value="Submeter" />
             }
@@ -29,7 +33,7 @@
             <ul>
                 @foreach (var project in ViewBag.Projetos)
                 {
-                    string n = project.name;
+                    string n = project.nameWork;
                     var id = project.workID;
                     <li class="boxList">@Html.ActionLink(n, "ShowProject", "Projects", new { id = @id}, null)</li>
                 }
