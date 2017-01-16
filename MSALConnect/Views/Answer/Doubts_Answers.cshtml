@@ -7,20 +7,21 @@
 
 <div class="contentAnswer">
 
-    <a onclick="exibe('@ViewBag.doubt.doubtID')" href="#">Respoder</a>
-    <div id="@ViewBag.doubt.doubtID" style="display: none">
-
-
-
-        <form action=" /Answer/CreateAnswer" method="post">
-        <input type="hidden" name="view" value="1" />
-        <input type="hidden" name="Course_id" value="@ViewBag.Course_id" />
-        <input type="hidden" name="id" value="@ViewBag.doubt.doubtID" />
-        <input name="content" id="content" type="textarea" />
-        <input id="submit" type="submit" value="Guardar" />
-
-        </form>
-
+    <h4 href="#">Responder</h4>
+    <div id="@ViewBag.doubt.doubtID">
+        
+        @using (Html.BeginForm("CreateAnswer", "Answer", FormMethod.Post, new {enctype = "multipart/form-data"}))
+        {
+            <input type="hidden" name="view" value="1"/>
+            <input type="hidden" name="Course_id" value="@ViewBag.Course_id"/>
+            <input type="hidden" name="id" value="@ViewBag.doubt.doubtID"/>
+            <input type="hidden" name="enctype" value="multipart/form-data"/>
+            <h5 href="#">Resposta: </h5>
+            <textarea cols="100" name="content" id="content" type="textarea"></textarea>
+            <h5 href="#">Selecione um Ficheiro(Opcional): </h5>
+            <input id="search" type="file" name="file"/>
+            <input id="submit" type="submit" value="Guardar"/>
+        }
 
     </div>
 </div>

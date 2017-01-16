@@ -19,6 +19,7 @@ namespace MSALConnect.Models
 
         public virtual Degree degree { get; set; }
         public virtual ICollection<Work> works { get; set; }
+        public virtual ICollection<Notification> notifications { get; set; }
         public virtual ICollection<Answer> answers { get; set; }
         public virtual ICollection<Doubt> doubts { get; set; }
     }

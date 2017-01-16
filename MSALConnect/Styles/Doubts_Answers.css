@@ -21,6 +21,16 @@ div.contentAnswer{
     padding: 10px 40px; 
     border-radius: 5px;
 }
+textarea {
+    margin-left: 5%;
+}
+#search {
+    margin-left: 5%;
+}
+
+#submit {
+    margin-left: 90%;
+}
 h1{
 
 font-weight: bold;

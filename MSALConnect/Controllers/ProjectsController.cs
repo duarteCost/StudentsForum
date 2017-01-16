@@ -35,6 +35,9 @@ namespace MSALConnect.Controllers
                 db.Works.Add(work);
                 db.SaveChanges();
             }
+
+            
+
             var w = course.works;
             ViewBag.Projetos = w;
             return View("Course_Projects");
