@@ -30,7 +30,6 @@ namespace MSALConnect.Controllers
                 var fileName = Path.GetFileName(file.FileName);
                 var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
                 file.SaveAs(path);
-                // adicionar na base de dados
                 Work work = new Work() { name = fileName, nameWork = nameWork, filePath = path, course = course, student = student };
                 db.Works.Add(work);
                 db.SaveChanges();
