@@ -42,8 +42,10 @@ namespace MSALConnect.Controllers
                     Session["Count"] = i;
                 }
             }
-           
-            
+
+           Student user = db.Students.Find(studentNumberInt);
+           ViewBag.Doubts = user.doubts;
+
             return View("getStudentCorses");
         }
 

@@ -12,7 +12,20 @@ namespace MSALConnect.Models
             : base("name=DB_DIS")
         {
         }
-        
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Student>()
+                .HasMany(t => t.classifications)
+                .WithMany(t => t.students)
+                .Map(m =>
+                {
+                    m.ToTable("StudentsClassifications");
+                    m.MapLeftKey("studentId");
+                    m.MapRightKey("classificationId");
+                });
+        }
+
         public virtual DbSet<Degree> Degrees { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<Doubt> Doubts { get; set; }
@@ -21,7 +34,7 @@ namespace MSALConnect.Models
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<AnswerFile> AnswerFiles { get; set; }
-        public virtual DbSet<Notification> Notifications { get; set; }
-        public virtual DbSet<Classification> Classification { get; set; }
+        public virtual DbSet<Classification> Classifications { get; set; }
+        public virtual DbSet<StudentsClassification> StudentsClassifications { get; set; }
     }
 }

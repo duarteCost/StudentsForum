@@ -14,7 +14,7 @@ namespace MSALConnect.Models
 
         public virtual Student student { get; set; }
         public virtual Course course { get; set; }
-        public virtual Classification classication { get; set; }
+        public virtual Classification classification { get; set; }
         public virtual ICollection<Doubt> doubts { get; set; }
     }
 }

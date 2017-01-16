@@ -16,8 +16,28 @@
         string path = ViewBag.work.filePath;
         string name = ViewBag.work.name;
         int id = ViewBag.work.workID;
-        @Html.ActionLink(name, "Download", "Projects", new { pathName = path, fileName = name }, null)
+        string alert = ViewBag.alert;
+        double classificationValue;
+        if (null == ViewBag.work.classification)
+        {
+            classificationValue = 0;
+        }
+        else
+        {
+            classificationValue = ViewBag.work.classification.classificationValue;
+        }
+
+        @Html.ActionLink(name, "Download", "Projects", new {pathName = path, fileName = name}, null)
+        if (alert != null)
+        {
+
+
+            <script type="text/javascript">
+                alert('@alert');
+            </script>
+        }
     }
+    <p>Classificação:@classificationValue</p>
     <!--Classificaton of project-->
     <form action =" /Classification/classify" method="post">
         <div class="estrelas">
