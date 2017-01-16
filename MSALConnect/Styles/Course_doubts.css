@@ -1,17 +1,15 @@
 ﻿body {
 }
 
-.contain {
-    margin-left: 25%;
-    margin-top: 5%; 
-}
+
 .contain h2 {
     margin-left: 5%;
     padding: 5%;
-    background-color: black;
 }
 
 .newDoub{
+    margin-left: 25%;
+    margin-top: 5%; 
     border: 2px solid #a1a1a1;
     padding: 10px 40px; 
     border-radius: 10px;
