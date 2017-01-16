@@ -1,8 +1,15 @@
 ﻿body {
 }
+.contain {
+    margin-left: 25%;
+    margin-top: 5%; 
+}
+.contain h2 {
+    margin-left: 5%;
+    padding: 5%;
+}
 
-
-div.newDoub{
+.start{
   margin-top:10%;
   margin-left:30%;
 
@@ -13,32 +20,11 @@ div.newDoub{
     border-radius: 10px;
 }
 
-div.contentDoubts{
+.contentDoubts{
   margin-top:1%;
   margin-left:30%;
 
    border: 2px solid #a1a1a1;
     padding: 10px 40px; 
     border-radius: 5px;
-}
-h1{
-
-font-weight: bold;
-}
-p{
-  
-    font-weight: bold;
-}
-
-.response{
-    text-align:right;
-
-}
-.TextAreaFor {
-  width: 300px;
-  height: 150px;
-}
-
-.p1{
-    text-align:right;
 }

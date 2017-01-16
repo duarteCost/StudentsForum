@@ -2,7 +2,7 @@
 }
 
 
-div.newDoub{
+div.newAnswer{
   margin-top:10%;
   margin-left:30%;
 
@@ -13,7 +13,7 @@ div.newDoub{
     border-radius: 10px;
 }
 
-div.contentDoubts{
+div.contentAnswer{
   margin-top:1%;
   margin-left:30%;
 
@@ -26,14 +26,9 @@ h1{
 font-weight: bold;
 }
 p{
-  
     font-weight: bold;
 }
 
-.response{
-    text-align:right;
-
-}
 .TextAreaFor {
   width: 300px;
   height: 150px;
@@ -41,4 +36,13 @@ p{
 
 .p1{
     text-align:right;
+}
+
+h2{
+     margin-top:10%;
+     margin-left:30%;
+}
+
+h3{
+     margin-left:30%;
 }

@@ -5,6 +5,8 @@
 <head>
     <link href="../../Styles/ShowProject.css" type="text/css" rel="stylesheet" />
     <link href="../../Styles/Cassification.css" type="text/css" rel="stylesheet" />
+    <link href="../../Styles/Course_doubts.css" type="text/css" rel="stylesheet" />
+
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -58,6 +60,32 @@
      
     
 </div>
+   <div class="newDoub">
+    <form action=" /Doubt/CreateDoubt" method="post">
+    <input type="hidden" name="Work_id" value="@id" />
+       Questão:
+    <input name="question" id="question" type="textarea" />
+       <br />
+       Conteudo:
+    <input name="content" id="content" type="textarea" />
+    <input id="submit" type="submit" value="Guardar" />
+    </form> 
+
+    </div>
+
+   
+        @foreach (var doubt in ViewBag.Doubts)
+        {
+          <div class="contentDoubts">
+          @*  <p class="getCorsesP"> @Html.ActionLink((string)doubt.question, "Index", "Answer", new { id = @doubt.doubtID}, null)</p>*@
+              <h2>@doubt.question</h2>
+            <h3>@doubt.content</h3>
+
+          </div>
+
+        }
+
+
 
 </body>
 </html>

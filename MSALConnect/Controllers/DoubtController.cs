@@ -22,26 +22,30 @@ namespace MSALConnect.Controllers
         [HttpGet]
         public ActionResult Create(int id)
         {
+            ViewBag.Course_id = id;
             var coursee = db.Courses.Find(id);
-           
+
             var doubtssss = coursee.doubts;
             var doubts = db.Doubts.FindAsync(coursee);
-         
+
 
             ViewBag.Doubts = doubtssss;
-           
+
             return View("Course_doubts");
         }
-
 
         [HttpPost]
         public ActionResult Create(Doubt doubt, int id)
         {
             if (ModelState.IsValid)
             {
+                var user_id = Session["userNumber"];
                 var coursee = db.Courses.Find(id);
                 doubt.course = coursee;
-                db.Doubts.Add(doubt);
+                var user = db.Students.Find(user_id);
+                user.doubts.Add(doubt);
+                
+               // db.Doubts.Add(doubt);
                 db.SaveChanges();
                 return RedirectToAction("Create");
             }
@@ -49,57 +53,24 @@ namespace MSALConnect.Controllers
             return View(doubt);
         }
 
-        [HttpPost]
-        public ActionResult CreateAnswer(string content, int id)
+
+     
+        public ActionResult CreateDoubt(int Work_id, string content, string question)
         {
-            var question = db.Doubts.Find(id);
 
-            Answer answer = new Answer() ;
-            //answer.
-            //answer.content = content;
-            //DateTime localDate = DateTime.Now;
-            //answer.date = localDate;
-            //db.Answers.Add(answer);
-            //db.SaveChanges();
-            //if (ModelState.IsValid)
-            //{
+            Doubt doubt = new Doubt();
 
-            //    db.Answers.Add(answer);
-            //    db.SaveChanges();
-            //    return RedirectToAction("Create");
-            //}
+            var Work = db.Works.Find(Work_id);
+            doubt.content = content;
+            doubt.question = question;
+            Work.doubts.Add(doubt);
+            db.SaveChanges();
 
-            return View("Course_doubts");
+            return RedirectToAction("ShowProject", "Projects", new { id = Work_id });
         }
-        //public ActionResult AddDoubt(String question, string content)
-        //{
-
-        //    DB_DIS db = new DB_DIS();
-        //    Doubt doubt = new Doubt();
-        //    doubt.content = content;
-        //    doubt.question = question;
-
-        //    db.Doubts.Add(doubt);
-        //    db.SaveChanges();
-
-        //    return View();
-
-        //}
 
 
-        //public ActionResult GetDoubts()
-        //{
-        //    DB_DIS db = new DB_DIS();
 
-        //    Doubt doubt = new Doubt() {question="Teste 1", content = " sadsds" };
-
-        //   // db.Doubts.Add(doubt);
-        //    // db.SaveChanges();
-
-        //    ViewBag.Doubts = db.Doubts;
-
-        //    return View("Course_doubts");
-        //}
 
 
     }
