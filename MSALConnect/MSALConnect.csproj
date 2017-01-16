@@ -179,15 +179,22 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\ClassificationController.cs" />
     <Compile Include="Controllers\DegreeController.cs" />
     <Compile Include="Controllers\DoubtController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701161305429_d.cs" />
+    <Compile Include="Migrations\201701161305429_d.Designer.cs">
+      <DependentUpon>201701161305429_d.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\AnswerFile.cs" />
+    <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\StudentsClassification.cs" />
     <Compile Include="Models\Classification.cs" />
     <Compile Include="Models\Course.cs" />
@@ -246,7 +253,9 @@
     <Content Include="Styles\Cassification.css" />
     <Content Include="Styles\Course_doubts.css" />
     <Content Include="Styles\Course_Projects.css" />
+    <Content Include="Styles\Doubts_Answers.css" />
     <Content Include="Styles\getCourses.css" />
+    <Content Include="Styles\Home.css" />
     <Content Include="Styles\layout.css" />
     <Content Include="Styles\ShowProject.css" />
     <Content Include="Views\Doubt\Course_doubts.cshtml" />
@@ -272,6 +281,8 @@
     <Content Include="Views\Home\getStudentCorses.cshtml" />
     <Content Include="Views\Shared\getCourses.cshtml" />
     <Content Include="Views\Projects\ShowProject.cshtml" />
+    <Content Include="Views\Answer\Doubts_Answers.cshtml" />
+    <Content Include="Views\Doubt\Response.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -292,6 +303,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
+    <Folder Include="Views\Notification\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701161305429_d.resx">
+      <DependentUpon>201701161305429_d.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

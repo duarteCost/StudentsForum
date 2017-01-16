@@ -73,16 +73,17 @@
 
     </div>
 
-   
-        @foreach (var doubt in ViewBag.Doubts)
-        {
-          <div class="contentDoubts">
-          @*  <p class="getCorsesP"> @Html.ActionLink((string)doubt.question, "Index", "Answer", new { id = @doubt.doubtID}, null)</p>*@
-              <h2>@doubt.question</h2>
-            <h3>@doubt.content</h3>
+        @if(ViewBag.Doubts != null) { 
+            foreach (var doubt in ViewBag.Doubts)
+            {
+              <div class="contentDoubts">
+              @*  <p class="getCorsesP"> @Html.ActionLink((string)doubt.question, "Index", "Answer", new { id = @doubt.doubtID}, null)</p>*@
+                  <h2>@doubt.question</h2>
+                <h3>@doubt.content</h3>
 
-          </div>
+              </div>
 
+            }
         }
 
 
