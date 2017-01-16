@@ -179,6 +179,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\ClassificationController.cs" />
     <Compile Include="Controllers\DegreeController.cs" />
     <Compile Include="Controllers\DoubtController.cs" />
@@ -272,6 +273,8 @@
     <Content Include="Views\Home\getStudentCorses.cshtml" />
     <Content Include="Views\Shared\getCourses.cshtml" />
     <Content Include="Views\Projects\ShowProject.cshtml" />
+    <Content Include="Views\Answer\Doubts_Answers.cshtml" />
+    <Content Include="Views\Doubt\Response.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
