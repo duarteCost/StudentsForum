@@ -45,6 +45,13 @@ namespace MSALConnect.Controllers
             DB_DIS db = new DB_DIS();
             Work work = db.Works.Find(id);
             ViewBag.work = work;
+
+            // JORGE //
+            ViewBag.Doubts = work.doubts;
+            
+
+
+            // FIM JORGE //
             return View();
         }
 

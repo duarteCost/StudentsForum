@@ -181,6 +181,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClassificationController.cs" />
     <Compile Include="Controllers\DegreeController.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\DoubtController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -251,6 +252,7 @@
     <None Include="Scripts\_references.js" />
     <Content Include="Global.asax" />
     <Content Include="Styles\Cassification.css" />
+    <Content Include="Styles\Doubts_Answers.css" />
     <Content Include="Styles\Course_doubts.css" />
     <Content Include="Styles\Course_Projects.css" />
     <Content Include="Styles\getCourses.css" />
@@ -280,6 +282,7 @@
     <Content Include="Views\Shared\getCourses.cshtml" />
     <Content Include="Views\Projects\ShowProject.cshtml" />
     <Content Include="Views\Classification\classify.cshtml" />
+    <Content Include="Views\Answer\Doubts_Answers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
