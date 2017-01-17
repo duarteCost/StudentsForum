@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using System.Data.Entity.Core.Common.CommandTrees;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
+using Microsoft.Identity.Client;
+using MSALConnect.Migrations;
 using MSALConnect.Models;
 
 namespace MSALConnect.Controllers
 {
     public class ClassificationController : Controller
     {
+        private int rate;
         // GET: Classification
         public ActionResult Index()
         {
@@ -20,6 +24,7 @@ namespace MSALConnect.Controllers
         
         public ActionResult classify(int rate, int id)
         {
+            this.rate = rate;
 
             DB_DIS db = new DB_DIS();
             var studentNumber = Session["userNumber"];
@@ -28,7 +33,7 @@ namespace MSALConnect.Controllers
             Work work = db.Works.Find(id);
             
 
-            if (student.classifications.Any())
+            if (student.classifications.Contains(work.classification))
             {
                 ViewBag.alert = "Apenas pode avialiar uma vez";
             }
@@ -36,12 +41,7 @@ namespace MSALConnect.Controllers
             {
                 if (null == work.classification)
                 {
-                    Classification classification = new Classification()
-                    {
-                        classificationNamber = 1,
-                        classificationValue = rate
-                    };
-                    db.Classifications.Add(classification);
+                    Classification classification = CreateClassification();
                     work.classification = classification;
                     student.classifications.Add(classification);
                     db.SaveChanges();
@@ -58,8 +58,23 @@ namespace MSALConnect.Controllers
                 }
                 
             }
+
+            
             ViewBag.work = work;
             return View("~/Views/Projects/ShowProject.cshtml");
-        }   
-}
+        }
+
+        public Classification CreateClassification()
+        {
+            DB_DIS db = new DB_DIS();
+            Classification classification = new Classification()
+            {
+                classificationNamber = 1,
+                classificationValue = rate
+            };
+            db.Classifications.Add(classification);
+            db.SaveChanges();
+            return classification;
+        }
+    }
 }
