@@ -35,22 +35,22 @@ namespace MSALConnect.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Doubt doubt, int id)
+        public ActionResult Create(string question, string content, int course_id)
         {
-            if (ModelState.IsValid)
-            {
+            
                 var user_id = Session["userNumber"];
-                var coursee = db.Courses.Find(id);
+                var coursee = db.Courses.Find(course_id);
+                var doubt = new Doubt();
+                doubt.question = question;
+                doubt.content = content;
                 doubt.course = coursee;
                 var user = db.Students.Find(user_id);
                 user.doubts.Add(doubt);
                 
                // db.Doubts.Add(doubt);
                 db.SaveChanges();
-                return RedirectToAction("Create");
-            }
 
-            return View(doubt);
+            return RedirectToAction("Create", "Doubt", new { course_id = course_id });
         }
 
 

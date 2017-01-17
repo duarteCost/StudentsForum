@@ -1,0 +1,51 @@
+﻿.contain {
+    margin-left: 25%;
+    margin-top: 5%;
+    overflow: hidden; 
+}
+.contain h2{
+    margin: 0% 5%;
+    padding-top: 5%;
+}
+.contain h3{
+    margin: 0% 10%;
+    padding: 2% 0%;
+}
+.contain h4{
+    padding: 2% 0%;
+}
+.contain h5{
+    margin: 1% 5%;
+}
+.contain h6{
+    margin: 1% 5%;
+}
+.contain p{
+    margin: 0% 5%;
+}
+.contain input{
+    margin: 0% 10%;
+}
+.contain textarea{
+    margin: 0% 10%;
+    margin: 1% 10%;
+}
+#search {
+    margin: 0% 10%;
+    padding: 1% 0%;
+}
+#submit {
+    margin-left: 85%;
+    margin-bottom: 2%;
+}
+.border{
+    border-color: #a1a1a1;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+}
+.width95 {
+    padding: 5%;
+    margin: 2%;
+    width: 95%;
+}

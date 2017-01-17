@@ -2,38 +2,47 @@
 
 
 <link href="../../Styles/Doubts_Answers.css" type="text/css" rel="stylesheet" />
-<h2>@ViewBag.doubt.question</h2>
-<h3>@ViewBag.doubt.content</h3>
-
-<div class="contentAnswer">
-
-    <h4 href="#">Responder</h4>
-    <div id="@ViewBag.doubt.doubtID">
+<link href="../../Styles/General.css" type="text/css" rel="stylesheet" />
+<div class="contain">
+    <h2>@ViewBag.doubt.question</h2>
+    <h3>@ViewBag.doubt.content</h3>
+    <div class="border width95">
         
-        @using (Html.BeginForm("CreateAnswer", "Answer", FormMethod.Post, new {enctype = "multipart/form-data"}))
-        {
-            <input type="hidden" name="view" value="1"/>
-            <input type="hidden" name="Course_id" value="@ViewBag.Course_id"/>
-            <input type="hidden" name="id" value="@ViewBag.doubt.doubtID"/>
-            <input type="hidden" name="enctype" value="multipart/form-data"/>
-            <h5 href="#">Resposta: </h5>
-            <textarea cols="100" name="content" id="content" type="textarea"></textarea>
-            <h5 href="#">Selecione um Ficheiro(Opcional): </h5>
-            <input id="search" type="file" name="file"/>
-            <input id="submit" type="submit" value="Guardar"/>
-        }
+        <h4 href="#">Responder</h4>
+        <div id="@ViewBag.doubt.doubtID">
 
+            @using (Html.BeginForm("CreateAnswer", "Answer", FormMethod.Post, new {enctype = "multipart/form-data"}))
+            {
+                <input type="hidden" name="view" value="1"/>
+                <input type="hidden" name="Course_id" value="@ViewBag.Course_id"/>
+                <input type="hidden" name="id" value="@ViewBag.doubt.doubtID"/>
+                <input type="hidden" name="enctype" value="multipart/form-data"/>
+                <h5>Resposta: </h5>
+                <textarea cols="95" name="content" id="content" type="textarea"></textarea>
+                <h5>Selecione um Ficheiro(Opcional): </h5>
+                <input id="search" type="file" name="file"/>
+                <input id="submit" type="submit" value="Guardar"/>
+            }
+
+        </div>
     </div>
+    <br>
+    <hr />
+    <br>
+    <h2>Respostas</h2>
+    @foreach (var answer in ViewBag.answers)
+    {
+        <div class="border width95">
+            <h3>@answer.content</h3>
+            @foreach (var answeFile in ViewBag.answerFiles)
+            {
+                if (answer.answerID == answeFile.answer.answerID)
+                {
+                    string name = answeFile.name;
+                    string path = answeFile.filePath;
+                    <h5>Download do exemplo: @Html.ActionLink(name, "Download", "Projects", new { pathName = path, fileName = name }, null)</h5>
+                }
+            }
+        </div>
+    }
 </div>
-
-@foreach (var answer in ViewBag.answers)
-{
-    <div class="contentAnswer">
-        <div><p>@answer.content</p></div>
-
-    </div>
-
-
-
-}
-

@@ -7,17 +7,18 @@
 <h2>Feed de noticias</h2>
 
 <p>quis noticias</p>
-
+<link href="../../Styles/General.css" type="text/css" rel="stylesheet" />
 <link href="../../Styles/Home.css" type="text/css" rel="stylesheet" />
+
 
 
     @foreach (var doubt in ViewBag.Doubts)
     {
-        <div class="contentDoubts">
-           
-            <h2>@doubt.question</h2>
-            <h3>@doubt.content</h3>
-
+        <div class="contain">
+            <div class="border width95">
+                <h3>@doubt.question</h3>
+                <h5>@doubt.content</h5>
+            </div>
         </div>
 
     }

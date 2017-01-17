@@ -12,16 +12,17 @@ namespace MSALConnect.Controllers
 {
     public class AnswerController : Controller
     {
-        // GET: Doubt
+        private static List<AnswerFile> answerFilesList;
         DB_DIS db = new DB_DIS();
         public ActionResult Index(int Course_id, int id)
         {
-
             var coursee = db.Courses.Find(Course_id);
             var doubts = db.Doubts.Find(id);
             ViewBag.Course_id = Course_id;
             ViewBag.doubt = doubts;
             ViewBag.answers = doubts.answers;
+            ViewBag.answerFiles = answerFilesList;
+
 
             return View("Doubts_Answers");
         }
@@ -40,7 +41,7 @@ namespace MSALConnect.Controllers
             answer.date = localDate;
             answer.doubts = question;
             db.Answers.Add(answer);
-            var answerId = answer.answerID;
+            
             if (file != null && file.ContentLength > 0)
             {
                 var fileName = Path.GetFileName(file.FileName);
@@ -48,10 +49,14 @@ namespace MSALConnect.Controllers
                 file.SaveAs(path);
                 AnswerFile file1 = new AnswerFile() { name = fileName, filePath = path, answer = answer };
                 db.AnswerFiles.Add(file1);
+                db.SaveChanges();
+                answerFilesList = db.AnswerFiles.ToList();
             }
             db.SaveChanges();
+            
 
-            if(view == 0)
+           
+            if (view == 0)
             {
                 return RedirectToAction("Create", "Doubt", new { id = Course_id });
             }

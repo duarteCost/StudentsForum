@@ -254,6 +254,7 @@
     <Content Include="Styles\Course_doubts.css" />
     <Content Include="Styles\Course_Projects.css" />
     <Content Include="Styles\Doubts_Answers.css" />
+    <Content Include="Styles\General.css" />
     <Content Include="Styles\getCourses.css" />
     <Content Include="Styles\Home.css" />
     <Content Include="Styles\layout.css" />

@@ -3,90 +3,90 @@
 }
 <html>
 <head>
-    <link href="../../Styles/ShowProject.css" type="text/css" rel="stylesheet" />
-    <link href="../../Styles/Cassification.css" type="text/css" rel="stylesheet" />
-    <link href="../../Styles/Course_doubts.css" type="text/css" rel="stylesheet" />
-
+    <link href="../../Styles/General.css" type="text/css" rel="stylesheet" />
+    <link href="../../Styles/ShowProject.css" type="text/css" rel="stylesheet"/>
+    <link href="../../Styles/Cassification.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
-<div class="contain">
-    <h2>ShowProject</h2>
-    @{
-        string path = ViewBag.work.filePath;
-        string name = ViewBag.work.name;
-        int id = ViewBag.work.workID;
-        string alert = ViewBag.alert;
-        double classificationValue;
-        if (null == ViewBag.work.classification)
-        {
-            classificationValue = 0;
-        }
-        else
-        {
-            classificationValue = ViewBag.work.classification.classificationValue;
-        }
+    <div class="contain">
+        <h2>@ViewBag.work.nameWork</h2>
+        <div class="border width95">
+            @{
+                string path = ViewBag.work.filePath;
+                string name = ViewBag.work.name;
+                int id = ViewBag.work.workID;
+                string alert = ViewBag.alert;
+                double classificationValue;
+                if (null == ViewBag.work.classification)
+                {
+                    classificationValue = 0;
+                }
+                else
+                {
+                    classificationValue = ViewBag.work.classification.classificationValue;
+                }
 
-        @Html.ActionLink(name, "Download", "Projects", new {pathName = path, fileName = name}, null)
-        if (alert != null)
-        {
-
-
-            <script type="text/javascript">
-                alert('@alert');
-            </script>
-        }
-    }
-    <p>Classificação:@classificationValue</p>
-    <!--Classificaton of project-->
-    <form action =" /Classification/classify" method="post">
-        <div class="estrelas">
-            <input type="radio" id="cm_star-empty" name="rate" value="" checked />
-            <label for="cm_star-1"><i class="fa"></i></label>
-            <input type="radio" id="cm_star-1" name="rate" value="1" />
-            <label for="cm_star-2"><i class="fa"></i></label>
-            <input type="radio" id="cm_star-2" name="rate" value="2" />
-            <label for="cm_star-3"><i class="fa"></i></label>
-            <input type="radio" id="cm_star-3" name="rate" value="3" />
-            <label for="cm_star-4"><i class="fa"></i></label>
-            <input type="radio" id="cm_star-4" name="rate" value="4" />
-            <label for="cm_star-5"><i class="fa"></i></label>
-            <input type="radio" id="cm_star-5" name="rate" value="5" />
-            <input type="hidden" name ="id" value ="@id"/>
-            <input type ="submit" name ="Classificar"/>
-            <br />
-        </div>
-    </form>
-     
-    
-</div>
-   <div class="newDoub">
-    <form action=" /Doubt/CreateDoubt" method="post">
-    <input type="hidden" name="Work_id" value="@id" />
-       Questão:
-    <input name="question" id="question" type="textarea" />
-       <br />
-       Conteudo:
-    <input name="content" id="content" type="textarea" />
-    <input id="submit" type="submit" value="Guardar" />
-    </form> 
-
-    </div>
-
-        @if(ViewBag.Doubts != null) { 
-            foreach (var doubt in ViewBag.Doubts)
-            {
-              <div class="contentDoubts">
-              @*  <p class="getCorsesP"> @Html.ActionLink((string)doubt.question, "Index", "Answer", new { id = @doubt.doubtID}, null)</p>*@
-                  <h2>@doubt.question</h2>
-                <h3>@doubt.content</h3>
-
-              </div>
-
+                <h5>Download do projeto: @Html.ActionLink(name, "Download", "Projects", new { pathName = path, fileName = name }, null)</h5>
+                if (alert != null)
+                {
+                    <script type="text/javascript">
+                        alert('@alert');
+                    </script>
+                }
             }
-        }
+            <h5>Classificação: @classificationValue</h5>
+            <!--Classificaton of project-->
+            <form action=" /Classification/classify" method="post">
+            <div class="estrelas">
+                <input type="radio" id="cm_star-empty" name="rate" value="" checked />
+                <label for="cm_star-1"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-1" name="rate" value="1" />
+                <label for="cm_star-2"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-2" name="rate" value="2" />
+                <label for="cm_star-3"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-3" name="rate" value="3" />
+                <label for="cm_star-4"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-4" name="rate" value="4" />
+                <label for="cm_star-5"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-5" name="rate" value="5" />
+                <input type="hidden" name="id" value="@id" />
+                <input type="submit" name="Classificar" value="Classificar" />
+                <br />
+            </div>
+            </form>
+
+        </div>
+        <br>
+        <hr />
+        <br>
+        <div class="border width95">
+            <form action=" /Doubt/CreateDoubt" method="post">
+                <input type="hidden" name="Work_id" value="@id" />
+                <h5>Questão:</h5>
+                <textarea cols="95" name="question" id="question" type="textarea"></textarea>
+                <br />
+                <h5>Conteudo:</h5>
+                <textarea cols="95" name="content" id="content" type="textarea"></textarea>
+                <input id="submit" type="submit" value="Guardar" />
+            </form>
+
+            @if (ViewBag.Doubts != null)
+            {
+                foreach (var doubt in ViewBag.Doubts)
+                {
+                    <div class="contentDoubts">
+                        @*  <p class="getCorsesP"> @Html.ActionLink((string)doubt.question, "Index", "Answer", new { id = @doubt.doubtID}, null)</p>*@
+                        <h2>@doubt.question</h2>
+                        <h3>@doubt.content</h3>
+
+                    </div>
+
+                }
+            }
 
 
-
+        </div>
+    </div>
 </body>
 </html>

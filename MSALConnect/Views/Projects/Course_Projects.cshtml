@@ -1,7 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <link href="../../Styles/Course_Projects.css" type="text/css" rel="stylesheet" />
+    <link href="../../Styles/General.css" type="text/css" rel="stylesheet" />
+    <link href="../../Styles/Course_Projects.css" type="text/css" rel="stylesheet"/>
+
 
     @{
         var courseName = Session["CorseNameInProjects"];
@@ -15,7 +17,7 @@
     <div class="contain">
         <h2>Projetos de @courseName</h2>
         <!-- UPLOAD DE FICHEIROS -->
-        <div class="newProject">
+        <div class="border width95">
             @using (Html.BeginForm("uploadFile", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 <h4>Adicionar um novo Projecto:</h4>
@@ -27,14 +29,16 @@
                 <input id="submit" type="submit" value="Submeter" />
             }
         </div>
-        <!-- ---------------- -->
+        <br>
+        <hr />
+        <br>
         <div class="listProjects">
             <ul>
                 @foreach (var project in ViewBag.Projetos)
                 {
                     string n = project.nameWork;
                     var id = project.workID;
-                    <li class="boxList">@Html.ActionLink(n, "ShowProject", "Projects", new { id = @id}, null)</li>
+                    <li class="border boxList">@Html.ActionLink(n, "ShowProject", "Projects", new { id = @id}, null)</li>
                 }
 
             </ul>
