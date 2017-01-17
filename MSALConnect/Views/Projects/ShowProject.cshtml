@@ -73,13 +73,13 @@
                 <textarea cols="95" name="content" id="content" type="textarea"></textarea>
                 <input id="submit" type="submit" value="Guardar" />
             </form>
+        </div>
 
             @if (ViewBag.Doubts != null)
             {
                 foreach (var doubt in ViewBag.Doubts)
                 {
-                    <div class="contentDoubts">
-                        @*  <p class="getCorsesP"> @Html.ActionLink((string)doubt.question, "Index", "Answer", new { id = @doubt.doubtID}, null)</p>*@
+                    <div class="border width95">
                         <h2>@doubt.question</h2>
                         <h3>@doubt.content</h3>
                     </div>
@@ -88,7 +88,7 @@
             }
 
 
-        </div>
+        
     </div>
 </body>
 </html>
