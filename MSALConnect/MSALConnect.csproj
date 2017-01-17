@@ -187,7 +187,6 @@
     <Compile Include="Controllers\ClassificationController.cs" />
     <Compile Include="Controllers\DegreeController.cs" />
     <Compile Include="Controllers\DoubtController.cs" />
-    <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -196,9 +195,12 @@
     <Compile Include="Migrations\201701161305429_d.Designer.cs">
       <DependentUpon>201701161305429_d.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701171157377_b.cs" />
+    <Compile Include="Migrations\201701171157377_b.Designer.cs">
+      <DependentUpon>201701171157377_b.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\AnswerFile.cs" />
-    <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\StudentsClassification.cs" />
     <Compile Include="Models\Classification.cs" />
     <Compile Include="Models\Course.cs" />
@@ -313,6 +315,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701161305429_d.resx">
       <DependentUpon>201701161305429_d.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701171157377_b.resx">
+      <DependentUpon>201701171157377_b.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

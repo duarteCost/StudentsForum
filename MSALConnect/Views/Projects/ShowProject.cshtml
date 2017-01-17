@@ -28,6 +28,9 @@
                 }
 
                 <h5>Download do projeto: @Html.ActionLink(name, "Download", "Projects", new { pathName = path, fileName = name }, null)</h5>
+                <h5>Descrição do projeto: </h5>
+                <h6>@ViewBag.work.content</h6>
+
                 if (alert != null)
                 {
                     <script type="text/javascript">
@@ -79,7 +82,6 @@
                         @*  <p class="getCorsesP"> @Html.ActionLink((string)doubt.question, "Index", "Answer", new { id = @doubt.doubtID}, null)</p>*@
                         <h2>@doubt.question</h2>
                         <h3>@doubt.content</h3>
-
                     </div>
 
                 }

@@ -18,7 +18,7 @@ namespace MSALConnect.Controllers
         }
 
         [HttpPost]
-        public ActionResult uploadFile(HttpPostedFileBase file, string nameWork)
+        public ActionResult uploadFile(HttpPostedFileBase file, string nameWork, string content)
         {
             DB_DIS db = new DB_DIS();
             var b = Session["userNumber"];
@@ -30,7 +30,7 @@ namespace MSALConnect.Controllers
                 var fileName = Path.GetFileName(file.FileName);
                 var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
                 file.SaveAs(path);
-                Work work = new Work() { name = fileName, nameWork = nameWork, filePath = path, course = course, student = student };
+                Work work = new Work() { name = fileName, nameWork = nameWork, content = content, filePath = path, course = course, student = student };
                 db.Works.Add(work);
                 db.SaveChanges();
             }
