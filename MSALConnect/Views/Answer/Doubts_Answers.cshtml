@@ -39,13 +39,15 @@
     {
         <div class="border width95">
             <h3>@answer.content</h3>
-            @foreach (var answeFile in ViewBag.answerFiles)
-            {
-                if (answer.answerID == answeFile.answer.answerID)
+            @if(ViewBag.answerFile != null) {
+                foreach (var answeFile in ViewBag.answerFiles)
                 {
-                    string name = answeFile.name;
-                    string path = answeFile.filePath;
-                    <h5>Download do exemplo: @Html.ActionLink(name, "Download", "Projects", new { pathName = path, fileName = name }, null)</h5>
+                    if (answer.answerID == answeFile.answer.answerID)
+                    {
+                        string name = answeFile.name;
+                        string path = answeFile.filePath;
+                        <h5>Download do exemplo: @Html.ActionLink(name, "Download", "Projects", new { pathName = path, fileName = name }, null)</h5>
+                    }
                 }
             }
         </div>
