@@ -1,9 +1,4 @@
-﻿@{
-
-    var courseId = @ViewBag.Course_id;
-    Session["getCoursesState"] = @courseId;
-}
-
+﻿
 
 
 <link href="../../Styles/Doubts_Answers.css" type="text/css" rel="stylesheet" />
@@ -39,15 +34,13 @@
     {
         <div class="border width95">
             <h3>@answer.content</h3>
-            @if(ViewBag.answerFile != null) {
-                foreach (var answeFile in ViewBag.answerFiles)
+            @foreach (var answeFile in ViewBag.answerFiles)
+            {
+                if (answer.answerID == answeFile.answer.answerID)
                 {
-                    if (answer.answerID == answeFile.answer.answerID)
-                    {
-                        string name = answeFile.name;
-                        string path = answeFile.filePath;
-                        <h5>Download do exemplo: @Html.ActionLink(name, "Download", "Projects", new { pathName = path, fileName = name }, null)</h5>
-                    }
+                    string name = answeFile.name;
+                    string path = answeFile.filePath;
+                    <h5>Download do exemplo: @Html.ActionLink(name, "Download", "Projects", new { pathName = path, fileName = name }, null)</h5>
                 }
             }
         </div>

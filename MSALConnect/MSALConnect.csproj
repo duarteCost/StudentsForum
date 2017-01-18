@@ -185,9 +185,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\ClassificationController.cs" />
+    <Compile Include="Controllers\Couses_DoubtsController.cs" />
     <Compile Include="Controllers\DegreeController.cs" />
-    <Compile Include="Controllers\DoubtController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\Projects_DoubtsController.cs" />
+    <Compile Include="Controllers\_AnswerController.cs" />
+    <Compile Include="Controllers\_DoubtController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

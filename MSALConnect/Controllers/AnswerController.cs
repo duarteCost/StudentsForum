@@ -10,10 +10,11 @@ using MSALConnect.Services;
 
 namespace MSALConnect.Controllers
 {
-    public class AnswerController : Controller
+    public class AnswerController : _AnswerController
     {
         private static List<AnswerFile> answerFilesList;
         DB_DIS db = new DB_DIS();
+
         public ActionResult Index(int Course_id, int id)
         {
             var coursee = db.Courses.Find(Course_id);
@@ -27,8 +28,40 @@ namespace MSALConnect.Controllers
             return View("Doubts_Answers");
         }
 
+        public ActionResult CreateAnswer(HttpPostedFileBase file, string content, int id, int Course_id, int view)
+        {
+            Create(file, content, id, Course_id);
+            return RedirectToAction("Index", new { Course_id = Course_id, id = id });
+        }
 
 
+
+        public override void save(Answer answer, int id, HttpPostedFileBase file)
+        {
+            var question = db.Doubts.Find(id);
+
+            answer.doubts = question;
+            var user_id = Session["userNumber"];
+            answer.student = db.Students.Find(user_id);
+            db.Answers.Add(answer);
+
+            if (file != null && file.ContentLength > 0)
+            {
+                var fileName = Path.GetFileName(file.FileName);
+                var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                file.SaveAs(path);
+                AnswerFile file1 = new AnswerFile() { name = fileName, filePath = path, answer = answer };
+                db.AnswerFiles.Add(file1);
+                db.SaveChanges();
+                answerFilesList = db.AnswerFiles.ToList();
+            }
+
+            db.SaveChanges();
+
+        }
+
+
+        /*
         [HttpPost]
         public ActionResult CreateAnswer(HttpPostedFileBase file, string content, int id, int Course_id, int view)
         {
@@ -41,7 +74,7 @@ namespace MSALConnect.Controllers
             answer.date = localDate;
             answer.doubts = question;
             db.Answers.Add(answer);
-            
+
             if (file != null && file.ContentLength > 0)
             {
                 var fileName = Path.GetFileName(file.FileName);
@@ -53,22 +86,22 @@ namespace MSALConnect.Controllers
                 answerFilesList = db.AnswerFiles.ToList();
             }
             db.SaveChanges();
-            
 
-           
+
+
             if (view == 0)
             {
                 return RedirectToAction("Create", "Doubt", new { id = Course_id });
             }
             else
             {
-            
+
                 return RedirectToAction("Index", new { Course_id = Course_id , id = id });
             }
-            
-        }
-      
 
+        }
+
+    */
 
     }
 }

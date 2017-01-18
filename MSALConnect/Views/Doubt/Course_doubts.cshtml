@@ -11,12 +11,12 @@
 <div class="contain">
     <h2>Dúvidas</h2>
     <div class="border width95">
-        @using (Html.BeginForm("Create", "Doubt", FormMethod.Post))
+        @using (Html.BeginForm("CreateDoubt", "Doubt", FormMethod.Post))
         {
             <h4>Adicionar uma nova Dúvida:</h4>
             <br>
             <h5>Question:</h5>
-            <input type="hidden" name="course_id" value="@ViewBag.Course_id" />
+            <input type="hidden" name="id" value="@ViewBag.Course_id" />
             <input size="90" name="question" id="question" placeholder="escreva aqui a sua dúvida" type="text" />
             <h5>Conteúdo:</h5>
             <textarea cols="90" name="content" id="content" type="textarea"></textarea>

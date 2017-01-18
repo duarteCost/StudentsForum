@@ -16,10 +16,12 @@
     {
         <div class="contain">
             <div class="border width95">
-                <h3>@doubt.question</h3>
+                
+                <h4> @Html.ActionLink((string)doubt.question, "Index", "Answer", new { id = @doubt.doubtID, Course_id = @doubt.course.id }, null)</h4>
+               
                 <h5>@doubt.content</h5>
+                <h4 style="text-align:right"> @Html.ActionLink("Consultar Respostas", "Index", "Answer", new { id = @doubt.doubtID, Course_id = @doubt.course.id }, null)</h4> 
             </div>
-        </div>
 
+        </div>
     }
-   
