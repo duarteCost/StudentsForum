@@ -22,7 +22,7 @@ namespace MSALConnect.Controllers
             ViewBag.Course_id = Course_id;
             ViewBag.doubt = doubts;
             ViewBag.answers = doubts.answers;
-            ViewBag.answerFiles = answerFilesList;
+            ViewBag.answerFiles = db.AnswerFiles.ToList();
 
 
             return View("Doubts_Answers");
@@ -53,7 +53,7 @@ namespace MSALConnect.Controllers
                 AnswerFile file1 = new AnswerFile() { name = fileName, filePath = path, answer = answer };
                 db.AnswerFiles.Add(file1);
                 db.SaveChanges();
-                answerFilesList = db.AnswerFiles.ToList();
+                //answerFilesList = db.AnswerFiles.ToList();
             }
 
             db.SaveChanges();
